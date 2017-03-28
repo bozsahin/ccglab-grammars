@@ -1,0 +1,3 @@
+(((THE MAN) (LAM P (P "MAN")))
+ ((THE MAN IN THE CORNER) (LAM P (P (("IN" "CORNER") "MAN"))))
+ ((THE MAN HITS THE CORNER) (("HITS" "CORNER") "MAN")))
