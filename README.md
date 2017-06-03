@@ -1,7 +1,7 @@
 # ccglab-grammars
 sample grammars written in CCGlab, for linguistic analyses, modeling, training, etc.
 
-<b>If you have a CCglab grammar developed, feel free to send a pull request.
+<b>If you have a CCGlab grammar developed, feel free to send a pull request.
 We will put it up in this repo.</b>
 
 In each folder:
