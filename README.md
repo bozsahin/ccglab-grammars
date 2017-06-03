@@ -6,13 +6,13 @@ We will put it up in this repo.</b>
 
 In each folder:
 
-  .ccg file is the source grammar you type. 
+  <code>.ccg</code> file is the source grammar you type. 
 
-  .ded file is the lisp-ready code ccglab generates for linguistic analysis.
+  <code>.ded</code> file is the lisp-ready code ccglab generates for linguistic analysis.
 
-  .ind file is the lisp-ready code ccglab uses for training and parse ranking.
+  <code>.ind</code> file is the lisp-ready code ccglab uses for training and parse ranking.
 
-  .sup file is for training from sentence-lf pairs.
+  <code>.sup</code> and <code>.supervision</code> files are for training from sentence-lf pairs.
 
 Other files are auxiliary.
 
