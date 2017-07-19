@@ -3,6 +3,9 @@
 ;; The beam search is turned off before training.
 ;; You can see the active rule set after the second line of '='s
 
+;; um is short for update-model
+;; st is short for show-training
+
 > (beam-off)
 *Beamp* = NIL  *Beam-exp* = 0.9
 NIL
