@@ -1,0 +1,105 @@
+;; update the g1 model after loading g1.ind, using 10 iterations over
+;;    the training set with learning parameters 1.0 each.
+;; The beam search is turned off before training.
+;; You can see the active rule set after the second line of '='s
+
+> (beam-off)
+*Beamp* = NIL  *Beam-exp* = 0.9
+NIL
+> (um "g1" 10 1.0 1.0 :load t)
+*Beamp* = NIL  *Beam-exp* = 0.9
+
+======================= l o a d i n g =======================================
+; loading #P"/Users/bozsahin/mysrc/myrepos/ccglab-grammars/grammar1/g1.ind"
+
+Project [g1] is assumed to consist of
+-----------------------------------------------------------------------------
+  CCG grammar source : g1.ccg $
+    Its token form   : g1.lisptokens $
+  Deduction grammar  : g1.ded $ (derived from g1.lisptokens)
+  Induction grammar  : g1.ind #
+  Supervision source : g1.sup ^
+  Model-specific code: g1.lisp ^
+   and other model-specific files you may create.
+       *CCG-GRAMMAR* : set from g1.ind
+  *LEX-RULES-TABLE*  : set from g1.ind
+Expected files       : $ for deduction, # for induction, ^ for model development
+=============================================================================
+
+Supervision file loaded: g1.sup
+Done. use (show-training/save-training) to see/save the results
+T
+> (st)
+The rule set used in the experiment:
+To change a switch, use (setf <switchname> <value>)
+	      where <value> is T (on) or NIL (off)
+	  *f-apply*     T
+	  *b-apply*     T
+	  *f-comp*      T
+	  *b-comp*      T
+	  *fx-comp*     T
+	  *bx-comp*     T
+	  *f-sub*       T
+	  *b-sub*       T
+	  *fx-sub*      T
+	  *bx-sub*      T
+          *f-subbar*    NIL
+	  *b-subbar*    NIL
+	  *fx-subbar*   NIL
+	  *bx-subbar*   NIL
+	  *f-subcomp*   T
+	  *b-subcomp*   T
+	  *fx-subcomp*  T
+	  *bx-subcomp*  T
+          *f2-comp*     T
+	  *b2-comp*     T
+	  *fx2-comp*    T
+	  *bx2-comp*    T
+	  *f2-sub*      T
+	  *b2-sub*      T
+	  *fx2-sub*     T
+	  *bx2-sub*     T
+	  *f3-comp*     T
+	  *b3-comp*     T
+	  *fx3-comp*    T
+	  *bx3-comp*    T
+
+;; here are the results. Note that bad LFs for verbs get penalized,
+;; unused lex entries are not penalized, hence correct type-raise
+;; and correct LFs (wrt training data) comes out on top.
+
+;; the 'loves' entries compete with each other
+;; and the first two 'knows' entries compete with next two,
+;; but the first two 'knows' do not compete with each other because
+;; they have different subcats. So all these numbers are relative
+;; to the training set.
+
+;; Note also that bad type-raising is seriously penalized.
+
+;; The point to take home is this: if a parameter gets bad although
+;;  you think its category is OK, compare its new value
+;; with those of its real competitors.
+
+Training parameters: N = 10 alpha0 = 1.0 c = 1.0 n = 6  *Beamp* = NIL  *Beam-exp* = 0.9
+
+Model parameters before and after training
+================================================
+key   lex             initial  final    diff 
+------------------------------------------------
+1     JOHN              1.0 5.184425  (4.184425)
+2     MARY              1.0  5.04924  ( 4.04924)
+3     JOHN              1.0 -3.18443  (-4.18443)
+4     MARY              1.0 -3.04924  (-4.04924)
+5     LOVES             1.0  7.48249  ( 6.48249)
+6     LOVES             1.0 -5.48249  (-6.48249)
+7     KNOWS             1.0 5.294394  (4.294394)
+8     KNOWS             1.0 4.619393  (3.619393)
+9     KNOWS             1.0  -3.2944  ( -4.2944)
+10    KNOWS             1.0  -2.6194  ( -3.6194)
+11    JOHN              1.0  6.64737  ( 5.64737)
+12    MARY              1.0  7.48249  ( 6.48249)
+13    JOHN              1.0 -4.64737  (-5.64737)
+14    MARY              1.0 -5.48249  (-6.48249)
+================================================
+NIL
+> (dribble)

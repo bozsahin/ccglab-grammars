@@ -1,0 +1,12 @@
+;; this is automatically generated from g1.supervision by
+;; (ms "g1" :maker 'sbcl)
+;; ms is shorthand for make-supervision
+;; Notice that all LFs are curried for you, and made string constants.
+;;  - both are in fact required.
+
+(((JOHN LOVES MARY) (("LOVE" "MARY") "JOHN"))
+ ((MARY LOVES JOHN) (("LOVE" "JOHN") "MARY"))
+ ((JOHN KNOWS MARY) (("KNOW" "MARY") "JOHN"))
+ ((MARY KNOWS JOHN) (("KNOW" "JOHN") "MARY"))
+ ((MARY KNOWS JOHN LOVES MARY) (("KNOW" (("LOVE" "MARY") "JOHN")) "MARY"))
+ ((JOHN KNOWS MARY LOVES JOHN) (("KNOW" (("LOVE" "JOHN") "MARY")) "JOHN")))
