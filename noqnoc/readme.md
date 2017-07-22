@@ -15,7 +15,7 @@
 10. One way is (rank '(john knows mary loves John))
     It will show the most likely LF for the example, among other things.
 11. The '.out' file shows the details above in Lispese. It was started
-    in ccglab as (dribble "g1.trained...out")
+    in ccglab as (dribble "g1.trained...out") before i ran the experiment.
 12. It's worth looking at, because it compares the untrained and trained grammar
         with some comments added on (by me) later.
 
