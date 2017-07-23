@@ -4,6 +4,10 @@
 ;; All data points will be measured as factors of variance from the mean.
 ;; try running same examples with new-g1.ind and new-g1z.ind. You always
 ;;   get the same result.
+;; The workflow for its creation was:
+;;  1. (load-model "new-g1")
+;;  2. (z-score-grammar)
+;;  3. (save-grammar "new-g1z.ind")
 ;; -cemB
 
 (defparameter *ccg-grammar*
