@@ -13,7 +13,7 @@ NIL
 *Beamp* = NIL  *Beam-exp* = 0.9
 
 ======================= l o a d i n g =======================================
-; loading #P"/Users/bozsahin/mysrc/myrepos/ccglab-grammars/grammar1/g1.ind"
+; loading #P"/Users/bozsahin/myrepos/ccglab-grammars/noqnoc/g1.ind"
 
 Project [g1] is assumed to consist of
 -----------------------------------------------------------------------------
@@ -71,13 +71,12 @@ To change a switch, use (setf <switchname> <value>)
 ;; unused lex entries are not penalized, hence correct type-raise
 ;; and correct LFs (wrt training data) comes out on top.
 
-;; the 'loves' entries compete with each other
+;; the 'loves' entries do not compete with each other
+;; (one is right the other never gives the right LF)
 ;; and the first two 'knows' entries compete with next two,
 ;; but the first two 'knows' do not compete with each other because
 ;; they have different subcats. So all these numbers are relative
 ;; to the training set.
-
-;; Note also that bad type-raising is seriously penalized.
 
 ;; The point to take home is this: if a parameter gets bad although
 ;;  you think its category is OK, compare its new value
@@ -89,19 +88,19 @@ Model parameters before and after training
 ================================================
 key   lex             initial  final    diff 
 ------------------------------------------------
-1     JOHN              1.0 5.184425  (4.184425)
-2     MARY              1.0  5.04924  ( 4.04924)
-3     JOHN              1.0 -3.18443  (-4.18443)
-4     MARY              1.0 -3.04924  (-4.04924)
+1     KNOWS             1.0 5.294394  (4.294394)
+2     KNOWS             1.0 4.619393  (3.619393)
+3     KNOWS             1.0  -3.2944  ( -4.2944)
+4     KNOWS             1.0  -2.6194  ( -3.6194)
 5     LOVES             1.0  7.48249  ( 6.48249)
 6     LOVES             1.0 -5.48249  (-6.48249)
-7     KNOWS             1.0 5.294394  (4.294394)
-8     KNOWS             1.0 4.619393  (3.619393)
-9     KNOWS             1.0  -3.2944  ( -4.2944)
-10    KNOWS             1.0  -2.6194  ( -3.6194)
-11    JOHN              1.0  6.64737  ( 5.64737)
-12    MARY              1.0  7.48249  ( 6.48249)
-13    JOHN              1.0 -4.64737  (-5.64737)
+7     JOHN              1.0 5.184425  (4.184425)
+8     JOHN              1.0 -3.18443  (-4.18443)
+9     JOHN              1.0  6.64737  ( 5.64737)
+10    JOHN              1.0 -4.64737  (-5.64737)
+11    MARY              1.0  5.04924  ( 4.04924)
+12    MARY              1.0 -3.04924  (-4.04924)
+13    MARY              1.0  7.48249  ( 6.48249)
 14    MARY              1.0 -5.48249  (-6.48249)
 ================================================
 NIL
