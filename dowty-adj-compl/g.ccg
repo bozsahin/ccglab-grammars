@@ -1,5 +1,6 @@
 % simple grammar to Dowty-shift a verb to look for its adjunct as argument
 %   e.g from vp to vp/(vp\vp) 
+% there are two ways to get it: another lex entry, unary rule.
 % -cem bozsahin
 
 john n := s/*vp : \p.p !john;
