@@ -1,6 +1,6 @@
 % example analyses for Turkish relativizers
 % -- cem bozsahin, aug 2017
-% -yan and -dik ara autonomous single slash
+% -yan and -dik are autonomous items with single slash
 % -neg and -tense are not
 % NB. \\'d categories for relativizers fail--they have phrasal scope.
 adam n := np: \x.!man x;
@@ -13,6 +13,4 @@ kitap n := np: \x.!book x;
 -dugu w := (np/np)\*(s\np) : \p\q.!and (p x)(q x);
 -dugu w := (np/np)\\(s\np) : \p\q.!and (p x)(q x);
 -ma aff :=  (vp\np)\\(vp\np):\p.!neg p;
-
-
-
+uyu v := vp[typ=root] : \x.!sleep x;
