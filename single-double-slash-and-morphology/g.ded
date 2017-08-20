@@ -49,10 +49,5 @@
        (DIR BS) (MODAL STAR) (LEX T)
        (((BCAT VP) (FEATS NIL)) (DIR BS) (MODAL ALL) ((BCAT NP) (FEATS NIL)))))
      (SEM (LAM P ("NEG" P))) (PARAM 1.0))
-    ((KEY 11) (PHON -DU) (MORPH AFF)
-     (SYN
-      (((BCAT @X) (FEATS NIL)) (DIR BS) (MODAL STAR) (LEX T)
-       ((BCAT @X) (FEATS NIL))))
-     (SEM (LAM P ("PAST" P))) (PARAM 1.0))
-    ((KEY 12) (PHON UYU) (MORPH V) (SYN ((BCAT VP) (FEATS ((TYP ROOT)))))
+    ((KEY 11) (PHON UYU) (MORPH V) (SYN ((BCAT VP) (FEATS ((TYP ROOT)))))
      (SEM (LAM X ("SLEEP" X))) (PARAM 1.0))))
