@@ -12,5 +12,6 @@ kitap n  |:=|  np |:|   |\\| x |.| !book x |;|
 -i w  |:=|   |(| vp |[| typ |=| ?t |]|  |/|  |(| vp |[| typ |=| ?t |]|  |\\| np |[| case |=| acc |]|  |)|  |)|  |\\|  |*| np |:|  |\\| p |\\| q |.| q p |;| 
 -dugu w  |:=|   |(| np |/| np |)|  |\\|  |*|  |(| s |\\| np |)|   |:|   |\\| p |\\| q |.| !and  |(| p x |)|  |(| q x |)|  |;| 
 -dugu w  |:=|   |(| np |/| np |)|  |\\|  |\\|  |(| s |\\| np |)|   |:|   |\\| p |\\| q |.| !and  |(| p x |)|  |(| q x |)|  |;| 
--ma aff  |:=|    |(| vp |\\| np |)|  |\\|  |\\|  |(| vp |\\| np |)|  |:|  |\\| p |.| !neg p |;| 
+-ma aff  |:=|    |(| vp |[| typ |=| root |]|  |\\| np |)|  |\\|  |\\|  |(| vp |[| typ |=| root |]|  |\\| np |)|  |:|  |\\| p |.| !neg p |;| 
+-ma aff  |:=|   vp |[| typ |=| root |]|  |\\|  |\\| vp |[| typ |=| root |]|  |:|  |\\| p |.| !neg p |;| 
 uyu v  |:=|  vp |[| typ |=| root |]|   |:|   |\\| x |.| !sleep x |;| )
