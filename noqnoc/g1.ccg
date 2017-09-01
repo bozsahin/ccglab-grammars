@@ -27,4 +27,9 @@ mary n := s/(s\np) : !mary;    % bad
 mary n := (s\np)\((s\np)/np) : \p.p !mary;
 mary n := (s\np)\((s\np)/np) : !mary;    % bad
 
+% Quinean confusion
 
+john n := s/(s\np) : \p.p !dog;
+john n := (s\np)\((s\np)/np) : \p.p !dog;
+mary n := s/(s\np) : \p.p !cat;
+mary n := (s\np)\((s\np)/np) : \p.p !cat;
