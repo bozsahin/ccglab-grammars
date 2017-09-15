@@ -1,6 +1,9 @@
 # ccglab-grammars
 sample grammars written in CCGlab, for linguistic analyses, modeling, training, etc.
 
+You need <a href="https://github.com/bozsahin/ccglab">ccglab</a> repo to computationally try the
+grammars included here.
+
 <b>If you have a CCGlab grammar developed, feel free to send a pull request.
 We will put it up in this repo.</b>
 
