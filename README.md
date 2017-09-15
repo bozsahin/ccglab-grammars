@@ -13,7 +13,7 @@ In each folder:
 
   <code>.ded</code> file is the lisp-ready code ccglab generates for linguistic analysis.
 
-  <code>.ind</code> file is the lisp-ready code ccglab uses for training and parse ranking.
+  <code>.ind</code> file is the lisp-ready code ccglab uses for model development, training and parse ranking.
 
   <code>.sup</code> and <code>.supervision</code> files are for training from sentence-lf pairs.
 
