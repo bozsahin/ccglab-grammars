@@ -19,6 +19,6 @@ In each folder:
 
 Other files are auxiliary.
 
-These grammars will be separated from ccglab source code soon for easier update.
+These grammars are separated from ccglab source code for easier update.
 
 -Cem Bozsahin
