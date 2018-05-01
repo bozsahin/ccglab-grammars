@@ -1,11 +1,11 @@
 ;; load this file in CCGlab after you did (load-grammar "fragments")
-;; then do (fragments-ders) to see the derivations.
-;; (fragments-lfs) will verify the lambda reductions in case you are interested.
+;; then do (do-derivations) to see the derivations.
+;; (check-lfs) will verify the lambda reductions in case you are interested.
 ;; example numbers are from the paper; see fragments.ccg header.
 ;; -cem bozsahin, May 2018
-(defparameter *fragments* '(
-  (4 (Can kediyi Ayşe köpeğe okşadı))
-  (4p (Can kediyi Ayşe köpeği okşadı))
+(defparameter *testdata* '(
+  (4 (Can kediyi ve Ayşe köpeğe okşadı))
+  (4p (Can kediyi ve Ayşe köpeği okşadı))
   (7 (Mary hits the target))
   (fig1a (Mary persuades John to hit the target))
   (fig1b (Mary promises John to hit the target))
@@ -21,24 +21,25 @@
   (37a (soktu arı kızı))
   (37b (soktu kızı arı))
   (fig4 (bütün arılar soktu kızı))
-  (43a (Eu não vi os carros))
-  (43b (Eu não os carros vi))
+  (43a (Eu não vi "os carros"))
+  (43b (Eu não "os carros" vi))
   (43c (Eu não os vi))
   (43d (Eu os vi))
   (43e (Eu não vi os))
+  (43e2 (Eu vi os))
   (fig5a ("O Paulo" não os viu))
   (fig5b (todos os viram))
   (fig5c (Eu não vi "os carros"))
   (47 ("A sopa" "O Paulo" comeu))
   ))
 
-(defun  fragments-ders ()
-  (dolist (p *fragments*)(progn (ccg-deduce (second p))
+(defun  do-derivations ()
+  (dolist (p *testdata*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%========~%" (first p))
 			   (cky-show-deduction))))
 
-(defun  fragments-lfs ()
-  (dolist (p *fragments*)
+(defun  check-lfs ()
+  (dolist (p *testdata*)
     (progn (ccg-deduce (second p))
 	   (format t "~%=======~%~s~%========~%" (first p))
 	   (cky-show-lf-eqv))))
