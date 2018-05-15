@@ -1,18 +1,11 @@
 
-> (lg "fg2018" :maker 'sbcl)
+> (load "fg2018.testsuite.lisp")
 
-** CCGlab warning ** There are 10 string-constant categories in your grammar, make sure none are void
+T
+> (load-grammar "fg2018")
 
-=========================== p r e p a r i n g ===============================
-
-Project name: fg2018
-  Input : fg2018.lisptokens 
-  Output: fg2018.ded 
-Check to see if output contains any spec errors.
-Fix and re-run if it does.
-You can also re/create fg2018.lisptokens by running 'tokens fg2018' sed script offline.
 ======================= l o a d i n g =======================================
-; loading #P"/home/bozsahin/mysrc/CCGlab/commonlisp/fg2018-MWEs-idioms/fg2018.ded"
+; loading #P"/home/bozsahin/myrepos/ccglab-grammars/cb-ag-FG2018-grammar/fg2018.ded"
 
 Project [fg2018] is assumed to consist of
 -----------------------------------------------------------------------------
@@ -27,9 +20,6 @@ Project [fg2018] is assumed to consist of
   *LEX-RULES-TABLE*  : set from fg2018.ded
 Expected files       : $ for deduction, # for induction, ^ for model development
 =============================================================================
-T
-> (load "fg2018.testsuite.lisp")
-
 T
 > (fg2018-ders)
 
@@ -2585,7 +2575,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|11A|
+|12A|
 ========
 
 
@@ -2623,7 +2613,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-13
+14
 ========
 
 
@@ -3000,7 +2990,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-15
+16
 ========
 
 
@@ -3077,7 +3067,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|15V|
+|16P|
 ========
 
 
@@ -3116,7 +3106,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-17
+18
 ========
 
 
@@ -3155,7 +3145,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-18
+19
 ========
 
 
@@ -3202,7 +3192,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-21
+22
 ========
 
 
@@ -3249,7 +3239,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-23
+24
 ========
 
 
@@ -3296,7 +3286,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|23V|
+|24V|
 ========
 
 
@@ -3392,7 +3382,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-23ALT
+24ALT
 ========
 
 
@@ -3494,7 +3484,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-24
+25
 ========
 
 
@@ -3571,7 +3561,63 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|27C|
+28
+========
+
+
+Derivation 1
+--------------
+LEX   (I) := NP
+        : I
+LEX   (TWIDDLED) := ((S\NP)/(THUMBS))/NP
+        : (LAM X
+           (LAM Y
+            (LAM Z
+             ((AND (((((PASS _Y) TIME) _) (SELF Z)) Z)) (((INALIEN X) Y) Z)))))
+LEX   (MY) := NP
+        : POSS
+>     (TWIDDLED)(MY) := (S\NP)/(THUMBS)
+        : ((LAM X
+            (LAM Y
+             (LAM Z
+              ((AND (((((PASS _Y) TIME) _) (SELF Z)) Z))
+               (((INALIEN X) Y) Z)))))
+           POSS)
+LEX   (THUMBS) := DUMMY
+        : THUMBS
+>     (TWIDDLED MY)(THUMBS) := S\NP
+        : (((LAM X
+             (LAM Y
+              (LAM Z
+               ((AND (((((PASS _Y) TIME) _) (SELF Z)) Z))
+                (((INALIEN X) Y) Z)))))
+            POSS)
+           THUMBS)
+<     (I)(TWIDDLED MY THUMBS) := S
+        : ((((LAM X
+              (LAM Y
+               (LAM Z
+                ((AND (((((PASS _Y) TIME) _) (SELF Z)) Z))
+                 (((INALIEN X) Y) Z)))))
+             POSS)
+            THUMBS)
+           I)
+
+Final LF, normal-order evaluated: 
+
+    ((AND (((((PASS _Y) TIME) _) (SELF I)) I)) (((INALIEN POSS) THUMBS) I)) =
+    (AND (PASS _Y TIME _ (SELF I) I) (INALIEN POSS THUMBS I))
+
+Try (cky-pprint) to see the details including the features and slash modalities.
+    (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
+=======
+|28P|
+========
+
+Try (cky-pprint) to see the details including the features and slash modalities.
+    (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
+=======
+|31C|
 ========
 
 
@@ -3965,5 +4011,813 @@ Final LF, normal-order evaluated:
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
+NIL
+> (fg2018-lfs)
+
+=======
+2
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 3
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 4
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 5
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 6
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 7
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 8
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 9
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 10
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 11
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 12
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 13
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 14
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 15
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 16
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 17
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 18
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 19
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 20
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 21
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 22
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 23
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 24
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 25
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 26
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 27
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 28
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+
+Derivation 29
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+Outer: (((PERSUADE ((HIT (DEF TARGET)) M)) M) J)
+
+
+=======
+2
+========
+
+=======
+2
+========
+
+=======
+3
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 3
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 4
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 5
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 6
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 7
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 8
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 9
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 10
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 11
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 12
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 13
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 14
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 15
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 16
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 17
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 18
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 19
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 20
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 21
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 22
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 23
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 24
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 25
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 26
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 27
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 28
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+
+Derivation 29
+----------------
+Results are alpha equivalent
+Inner: (((PERSUADE ((HIT H) M)) M) J)
+Outer: (((PERSUADE ((HIT H) M)) M) J)
+
+
+=======
+|12A|
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: (((SCORE _) C) (MY TEAM))
+Outer: (((SCORE _) C) (MY TEAM))
+
+
+=======
+14
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+Outer: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+Outer: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+
+
+
+Derivation 3
+----------------
+Results are alpha equivalent
+Inner: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+Outer: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+
+
+
+Derivation 4
+----------------
+Results are alpha equivalent
+Inner: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+Outer: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+
+
+
+Derivation 5
+----------------
+Results are alpha equivalent
+Inner: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+Outer: ((AND (DID (NOT ((KICK (DEF BUCKET)) M)))) ((KICK (DEF BUCKET)) J))
+
+
+=======
+16
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((CAUSE
+         (INIT
+          ((((HOLD _) (LAM X (LAM P (LAM Y ((UP (P Y)) X))))) (DEF BOOK)) I)))
+        I)
+Outer: ((CAUSE
+         (INIT
+          ((((HOLD _) (LAM X (LAM P (LAM Y ((UP (P Y)) X))))) (DEF BOOK)) I)))
+        I)
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: ((CAUSE
+         (INIT
+          ((((HOLD _) (LAM X (LAM P (LAM Y ((UP (P Y)) X))))) (DEF BOOK)) I)))
+        I)
+Outer: ((CAUSE
+         (INIT
+          ((((HOLD _) (LAM X (LAM P (LAM Y ((UP (P Y)) X))))) (DEF BOOK)) I)))
+        I)
+
+
+=======
+|16P|
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((((PICK _) (LAM X (LAM P (LAM Y ((UP (P Y)) X))))) (DEF BOOK)) I)
+Outer: ((((PICK _) (LAM X (LAM P (LAM Y ((UP (P Y)) X))))) (DEF BOOK)) I)
+
+
+=======
+18
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: (DEF (LAM X ((AND ((KICK X) YOU)) (BUCKET X))))
+Outer: (DEF (LAM X ((AND ((KICK X) YOU)) (BUCKET X))))
+
+
+=======
+19
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((AND ((KICK (DEF BUCKET)) J)) ((DRAG (DEF BUCKET)) M))
+Outer: ((AND ((KICK (DEF BUCKET)) J)) ((DRAG (DEF BUCKET)) M))
+
+
+=======
+22
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((AND ((COOK (DEF BEANS)) M)) ((SPILL (DEF BEANS)) YOU))
+Outer: ((AND ((COOK (DEF BEANS)) M)) ((SPILL (DEF BEANS)) YOU))
+
+
+=======
+24
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((AND ((COOK (DEF BEANS)) M)) ((SPILL (DEF BEANS)) YOU))
+Outer: ((AND ((COOK (DEF BEANS)) M)) ((SPILL (DEF BEANS)) YOU))
+
+
+=======
+|24V|
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((AND ((SPILL (DEF BEANS)) M)) ((SPILL (DEF BEANS)) YOU))
+Outer: ((AND ((SPILL (DEF BEANS)) M)) ((SPILL (DEF BEANS)) YOU))
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: ((AND ((((REVEAL _) (DEF BEANS)) SECRET) M))
+        ((((REVEAL _) (DEF BEANS)) SECRET) YOU))
+Outer: ((AND ((((REVEAL _) (DEF BEANS)) SECRET) M))
+        ((((REVEAL _) (DEF BEANS)) SECRET) YOU))
+
+
+=======
+24ALT
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((SPILL (DEF BEANS)) YOU)
+Outer: ((SPILL (DEF BEANS)) YOU)
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: ((((REVEAL _) (DEF BEANS)) SECRET) YOU)
+Outer: ((((REVEAL _) (DEF BEANS)) SECRET) YOU)
+
+
+
+Derivation 3
+----------------
+Results are alpha equivalent
+Inner: ((SPILL (DEF BEANS)) YOU)
+Outer: ((SPILL (DEF BEANS)) YOU)
+
+
+
+Derivation 4
+----------------
+Results are alpha equivalent
+Inner: ((((REVEAL _) (DEF BEANS)) SECRET) YOU)
+Outer: ((((REVEAL _) (DEF BEANS)) SECRET) YOU)
+
+
+=======
+25
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: (DEF (LAM X ((AND ((SPILL X) YOU)) (BEANS X))))
+Outer: (DEF (LAM X ((AND ((SPILL X) YOU)) (BEANS X))))
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: (DEF (LAM X ((AND ((((REVEAL _) X) SECRET) YOU)) (BEANS X))))
+Outer: (DEF (LAM X ((AND ((((REVEAL _) X) SECRET) YOU)) (BEANS X))))
+
+
+=======
+28
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: ((AND (((((PASS _Y) TIME) _) (SELF I)) I)) (((INALIEN POSS) THUMBS) I))
+Outer: ((AND (((((PASS _Y) TIME) _) (SELF I)) I)) (((INALIEN POSS) THUMBS) I))
+
+
+=======
+|28P|
+========
+
+=======
+|31C|
+========
+
+
+Derivation 1
+----------------
+Results are alpha equivalent
+Inner: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+Outer: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+
+
+
+Derivation 2
+----------------
+Results are alpha equivalent
+Inner: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+Outer: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+
+
+
+Derivation 3
+----------------
+Results are alpha equivalent
+Inner: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+Outer: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+
+
+
+Derivation 4
+----------------
+Results are alpha equivalent
+Inner: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+Outer: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+
+
+
+Derivation 5
+----------------
+Results are alpha equivalent
+Inner: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+Outer: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+
+
+
+Derivation 6
+----------------
+Results are alpha equivalent
+Inner: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+Outer: (LAM Y (((PERSUADE (EASY ((DO (DEF DISHES)) J))) J) Y))
+
+
+
+Derivation 7
+----------------
+Results are alpha equivalent
+Inner: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+Outer: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+
+
+
+Derivation 8
+----------------
+Results are alpha equivalent
+Inner: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+Outer: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+
+
+
+Derivation 9
+----------------
+Results are alpha equivalent
+Inner: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+Outer: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+
+
+
+Derivation 10
+----------------
+Results are alpha equivalent
+Inner: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+Outer: (LAM X (EASY (((PERSUADE ((DO (DEF DISHES)) J)) J) X)))
+
 NIL
 > (dribble)

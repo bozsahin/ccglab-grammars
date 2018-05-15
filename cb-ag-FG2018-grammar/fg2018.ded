@@ -2,7 +2,7 @@
   '(((KEY 1) (PHON HITS) (MORPH 1A)
      (SYN
       ((((BCAT S) (FEATS NIL)) (DIR BS) (MODAL HARMONIC)
-        ((BCAT NP) (FEATS ((A 3S)))))
+        ((BCAT NP) (FEATS ((AGR 3S)))))
        (DIR FS) (MODAL HARMONIC) ((BCAT NP) (FEATS ((SPEC M))))))
      (SEM (LAM X (LAM Y (("HIT" X) Y)))) (PARAM 1.0))
     ((KEY 2) (PHON HIT) (MORPH 1B)
@@ -147,8 +147,8 @@
         ((BCAT NP) (FEATS NIL)))
        (DIR FS) (MODAL HARMONIC) ((BCAT NP) (FEATS ((SPEC M))))))
      (SEM (LAM X (LAM Y (("CHOOSE" X) Y)))) (PARAM 1.0))
-    ((KEY 32) (PHON I) (MORPH 15) (SYN ((BCAT NP) (FEATS ((A 1S))))) (SEM "I")
-     (PARAM 1.0))
+    ((KEY 32) (PHON I) (MORPH 15) (SYN ((BCAT NP) (FEATS ((AGR 1S)))))
+     (SEM "I") (PARAM 1.0))
     ((KEY 33) (PHON BOOK) (MORPH 15) (SYN ((BCAT N) (FEATS ((H BOOK)))))
      (SEM "BOOK") (PARAM 1.0))
     ((KEY 34) (PHON UP) (MORPH 15)
@@ -247,22 +247,41 @@
          (LAM W
           (("CAUSE" ("INIT" (((((("REVULSE" _) Z) "FEAR") _) Y) X))) W))))))
      (PARAM 1.0))
-    ((KEY 48) (PHON PERSUADE) (MORPH 29C)
+    ((KEY 48) (PHON TWIDDLED) (MORPH 28)
+     (SYN
+      (((((BCAT S) (FEATS NIL)) (DIR BS) (MODAL ALL)
+         ((BCAT NP) (FEATS ((AGR ?A)))))
+        (DIR FS) (MODAL ALL) ((BCAT (thumbs)) (BCONST T) (FEATS NIL)))
+       (DIR FS) (MODAL ALL) ((BCAT NP) (FEATS ((LEXC M) (POSS P) (AGR ?A))))))
+     (SEM
+      (LAM X
+       (LAM Y
+        (LAM Z
+         (("AND" ((((("PASS" _Y) "TIME") _) ("SELF" Z)) Z))
+          ((("INALIEN" X) Y) Z))))))
+     (PARAM 1.0))
+    ((KEY 49) (PHON MY) (MORPH 28)
+     (SYN ((BCAT NP) (FEATS ((LEXC M) (AGR 1S))))) (SEM "POSS") (PARAM 1.0))
+    ((KEY 50) (PHON HIS) (MORPH 28)
+     (SYN ((BCAT NP) (FEATS ((LEXC M) (AGR 3S))))) (SEM "POSS") (PARAM 1.0))
+    ((KEY 51) (PHON THUMBS) (MORPH 28) (SYN ((BCAT DUMMY) (FEATS NIL)))
+     (SEM "THUMBS") (PARAM 1.0))
+    ((KEY 52) (PHON PERSUADE) (MORPH 29C)
      (SYN
       ((((BCAT VP) (FEATS ((TYP INF)))) (DIR FS) (MODAL STAR)
         ((BCAT VP) (FEATS ((TYP TO-INF)))))
        (DIR FS) (MODAL STAR) ((BCAT NP) (FEATS NIL))))
      (SEM (LAM X (LAM P (LAM Y ((("PERSUADE" (P X)) X) Y))))) (PARAM 1.0))
-    ((KEY 49) (PHON JOHN) (MORPH 29C) (SYN ((BCAT NP) (FEATS NIL))) (SEM "J")
+    ((KEY 53) (PHON JOHN) (MORPH 29C) (SYN ((BCAT NP) (FEATS NIL))) (SEM "J")
      (PARAM 1.0))
-    ((KEY 50) (PHON DO) (MORPH 29C)
+    ((KEY 54) (PHON DO) (MORPH 29C)
      (SYN
       (((BCAT VP) (FEATS NIL)) (DIR FS) (MODAL HARMONIC)
        ((BCAT NP) (FEATS NIL))))
      (SEM (LAM X (LAM Y (("DO" X) Y)))) (PARAM 1.0))
-    ((KEY 51) (PHON DISHES) (MORPH 29C) (SYN ((BCAT N) (FEATS ((H DISHES)))))
+    ((KEY 55) (PHON DISHES) (MORPH 29C) (SYN ((BCAT N) (FEATS ((H DISHES)))))
      (SEM "DISHES") (PARAM 1.0))
-    ((KEY 52) (PHON EASILY) (MORPH 29C)
+    ((KEY 56) (PHON EASILY) (MORPH 29C)
      (SYN
       (((BCAT VP) (FEATS NIL)) (DIR BS) (MODAL HARMONIC)
        ((BCAT VP) (FEATS NIL))))

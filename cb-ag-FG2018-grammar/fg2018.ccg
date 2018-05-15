@@ -7,7 +7,7 @@
 %   structure of p.  x is the event modality of p. This is just a convention.
 % -Cem Bozsahin March 2018
 
-hits 1a := (s\^np[a=3s])/^np[spec=m] : \x\y.!hit x y;
+hits 1a := (s\^np[agr=3s])/^np[spec=m] : \x\y.!hit x y;
 hit  1b := vp[typ=inf]/^np[spec=m] : \x\y.!hit x y;
 target 2 := n[h=target]: !target;
 john 3  := np : !j;
@@ -38,7 +38,7 @@ bucket 13 := n[h=bucket] : !bucket;
 picked 14a := (s\^np)/"up"/^np[heavy=m] : \y\x\z.!cause (!init(!hold _ x y z)) z;
 picked 14b := (s\^np)/^np[lexc=p]/"up" : \x\y\z.!pick _ x y z;
 picked 14c := (s\^np)/^np[spec=m] : \x\y.!choose x y;
-I 15 := np[a=1s] : !i;
+I 15 := np[agr=1s] : !i;
 book 15 := n[h=book] : !book;
 up 15 := ((s\np)\(s\np))/^np : \x\p\y.!up (p y) x;
 that 17a := (n[h=?x]\n[h=?x])/*(s/np[spec=?pm]) : \p\q\x.!and (p x)(q x);
@@ -55,6 +55,11 @@ you 21 := s/(s\np): \p.p !you;
 cooked 21 := (s\^np)/^np[spec=m] : \x\y.!cook x y;
 beans 21 := n[h=beans] : !beans;
 give 26c := vp/n[h=creeps]/"the"/^np : \x\y\z\w.!cause (!init (!revulse _ z !fear _ y x)) w;
+twiddled 28 := (s\np[agr=?a])/"thumbs"/np[lexc=m,poss=p,agr=?a]
+                  : \x\y\z.!and (!pass _y !time _ (!self z) z)(!inalien x y z);
+my 28 := np[lexc=m,agr=1s] : !poss;
+his 28 := np[lexc=m,agr=3s] : !poss;
+thumbs 28 := dummy : !thumbs;
 persuade 29c := vp[typ=inf]/*vp[typ=to-inf]/*np : \x\p\y.!persuade (p x) x y;
 John 29c := np : !j;
 do 29c := vp/^np : \x\y.!do x y;
