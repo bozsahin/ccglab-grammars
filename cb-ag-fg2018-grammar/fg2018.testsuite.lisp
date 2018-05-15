@@ -5,8 +5,8 @@
 ;; -cem bozsahin may 2018
 (defparameter *fg2018* '(
 (2 (John persuaded Mary to hit the target))
-(2 (John persuaded Mary hit the target))
-(2 (John persuaded Mary to hits the target))
+(2a (John persuaded Mary hit the target))
+(2b(John persuaded Mary to hits the target))
 (3 (John persuaded Mary to hit Harry))
 (12a (my team scored every which way))
 (14 (John kicked and Mary did not kick the bucket))
