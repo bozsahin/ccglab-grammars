@@ -51,17 +51,21 @@ spill 20b := vp[typ=inf]/^np : \x\y.!if head (x) eq !beans !then !reveal _ x !se
 spill 20c := vp[typ=inf]/"beans"/PredP : \p\x\y.!reveal _ (p x) !secret y;
 spill 20d := vp[typ=inf]/^np[spec=m] : \x\y.!spill x y;
 spilled 21 := (s\^np)/^np[spec=m] : \x\y.!spill x y;
-you 21 := s/(s\np): \p.p !you;
-cooked 21 := (s\^np)/^np[spec=m] : \x\y.!cook x y;
-beans 21 := n[h=beans] : !beans;
-give 26c := vp/n[h=creeps]/"the"/^np : \x\y\z\w.!cause (!init (!revulse _ z !fear _ y x)) w;
-twiddled 28 := (s\np[agr=?a])/"thumbs"/np[lexc=m,poss=p,agr=?a]
+you 22 := s/(s\np): \p.p !you;
+cooked 22 := (s\^np)/^np[spec=m] : \x\y.!cook x y;
+beans 22 := n[h=beans] : !beans;
+give 28c := vp/n[h=creeps]/"the"/^np : \x\y\z\w.!cause (!init (!revulse _ z !fear _ y x)) w;
+twiddled 29 := (s\np[agr=?a])/"thumbs"/np[lexc=m,poss=p,agr=?a]
                   : \x\y\z.!and (!pass _y !time _ (!self z) z)(!inalien x y z);
-my 28 := np[lexc=m,agr=1s] : !poss;
-his 28 := np[lexc=m,agr=3s] : !poss;
-thumbs 28 := dummy : !thumbs;
-persuade 29c := vp[typ=inf]/*vp[typ=to-inf]/*np : \x\p\y.!persuade (p x) x y;
-John 29c := np : !j;
-do 29c := vp/^np : \x\y.!do x y;
-dishes 29c := n[h=dishes] : !dishes;
-easily 29c := vp\^vp : \p\x.!easy (p x);
+my 29 := np[lexc=m,agr=1s] : !poss;
+his 29 := np[lexc=m,agr=3s] : !poss;
+thumbs 29 := dummy : !thumbs;
+persuade 32c := vp[typ=inf]/*vp[typ=to-inf]/*np : \x\p\y.!persuade (p x) x y;
+John 32c := np : !j;
+do 32c := vp/^np : \x\y.!do x y;
+dishes 32c := n[h=dishes] : !dishes;
+easily 32c := vp\^vp : \p\x.!easy (p x);
+at 21a := (s/^s)/"any rate" : \x\s.!more !exactly s _ x;
+at 21b := (s\^s)/"any rate" : \x\s.!contrastwith _ x  s;
+any 21 := dummy/dummy : \x. !any x;
+rate 21 := dummy : !rate;
