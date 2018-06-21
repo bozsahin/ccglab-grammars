@@ -1,6 +1,15 @@
 
-> (load-grammar "fragments")
+> (load-grammar "fragments" :maker 'sbcl)
 
+
+=========================== p r e p a r i n g ===============================
+
+Project name: fragments
+  Input : fragments.lisptokens 
+  Output: fragments.ded 
+Check to see if output contains any spec errors.
+Fix and re-run if it does.
+You can also re/create fragments.lisptokens by running 'tokens fragments' sed script offline.
 ======================= l o a d i n g =======================================
 ; loading #P"/Users/bozsahin/myrepos/ccglab-grammars/cb-word-order-chapter/fragments.ded"
 
@@ -161,17 +170,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -204,9 +213,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -214,7 +223,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -237,15 +246,15 @@ Final LF, normal-order evaluated:
 
 Derivation 3
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -255,9 +264,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -286,7 +295,7 @@ Final LF, normal-order evaluated:
 
 Derivation 4
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -294,7 +303,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -304,9 +313,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -343,9 +352,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -386,17 +395,17 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -426,9 +435,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -436,7 +445,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -455,15 +464,15 @@ Final LF, normal-order evaluated:
 
 Derivation 8
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -473,9 +482,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -501,7 +510,7 @@ Final LF, normal-order evaluated:
 
 Derivation 9
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -509,7 +518,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -519,9 +528,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -555,9 +564,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -595,21 +604,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -642,13 +651,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -656,7 +665,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -689,20 +698,20 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -731,12 +740,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -744,7 +753,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -773,9 +782,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -820,9 +829,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -863,13 +872,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -918,12 +927,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -968,17 +977,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -1008,9 +1017,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1018,7 +1027,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -1037,15 +1046,15 @@ Final LF, normal-order evaluated:
 
 Derivation 21
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -1055,9 +1064,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -1083,7 +1092,7 @@ Final LF, normal-order evaluated:
 
 Derivation 22
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1091,7 +1100,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -1101,9 +1110,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -1137,9 +1146,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -1177,17 +1186,17 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -1217,9 +1226,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1227,7 +1236,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -1246,15 +1255,15 @@ Final LF, normal-order evaluated:
 
 Derivation 26
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -1264,9 +1273,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -1292,7 +1301,7 @@ Final LF, normal-order evaluated:
 
 Derivation 27
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1300,7 +1309,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -1310,9 +1319,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -1346,9 +1355,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -1386,21 +1395,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -1429,13 +1438,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1443,7 +1452,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -1472,20 +1481,20 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -1514,12 +1523,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1527,7 +1536,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -1556,9 +1565,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -1599,9 +1608,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -1642,13 +1651,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -1694,12 +1703,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -1748,17 +1757,17 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -1789,9 +1798,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1799,7 +1808,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -1816,15 +1825,15 @@ Final LF, normal-order evaluated:
 
 Derivation 39
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -1838,9 +1847,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -1862,7 +1871,7 @@ Final LF, normal-order evaluated:
 
 Derivation 40
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -1870,7 +1879,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -1884,9 +1893,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -1920,9 +1929,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -1966,17 +1975,17 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -2014,9 +2023,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -2024,7 +2033,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -2043,15 +2052,15 @@ Final LF, normal-order evaluated:
 
 Derivation 44
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -2070,9 +2079,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -2096,7 +2105,7 @@ Final LF, normal-order evaluated:
 
 Derivation 45
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -2104,7 +2113,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -2123,9 +2132,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -2166,9 +2175,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -2205,27 +2214,27 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PERSUADES JOHN TO) := S/VP
+>B    (MARY)(PERSUADES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -2251,19 +2260,19 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PERSUADES JOHN TO) := S/VP
+>B    (MARY)(PERSUADES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -2271,7 +2280,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -2301,23 +2310,23 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -2346,15 +2355,15 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -2362,7 +2371,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -2396,9 +2405,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -2406,15 +2415,15 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -2450,9 +2459,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -2460,7 +2469,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -2468,7 +2477,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -2495,9 +2504,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -2542,12 +2551,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -2600,9 +2609,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -2650,9 +2659,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -2695,19 +2704,19 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PERSUADES JOHN TO) := S/VP
+>B    (MARY)(PERSUADES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PERSUADES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -2754,15 +2763,15 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PERSUADES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -2812,9 +2821,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -2822,7 +2831,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PERSUADES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -2874,17 +2883,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -2917,9 +2926,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -2927,7 +2936,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -2950,15 +2959,15 @@ Final LF, normal-order evaluated:
 
 Derivation 3
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -2968,9 +2977,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -2999,7 +3008,7 @@ Final LF, normal-order evaluated:
 
 Derivation 4
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3007,7 +3016,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -3017,9 +3026,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -3056,9 +3065,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -3099,17 +3108,17 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -3139,9 +3148,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3149,7 +3158,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -3168,15 +3177,15 @@ Final LF, normal-order evaluated:
 
 Derivation 8
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -3186,9 +3195,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -3214,7 +3223,7 @@ Final LF, normal-order evaluated:
 
 Derivation 9
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3222,7 +3231,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -3232,9 +3241,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -3268,9 +3277,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -3308,21 +3317,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -3355,13 +3364,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3369,7 +3378,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -3402,20 +3411,20 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -3444,12 +3453,12 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3457,7 +3466,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -3486,9 +3495,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -3533,9 +3542,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -3576,13 +3585,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PROMISES JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -3631,12 +3640,12 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PROMISES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -3681,17 +3690,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -3721,9 +3730,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3731,7 +3740,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -3750,15 +3759,15 @@ Final LF, normal-order evaluated:
 
 Derivation 21
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -3768,9 +3777,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -3796,7 +3805,7 @@ Final LF, normal-order evaluated:
 
 Derivation 22
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3804,7 +3813,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -3814,9 +3823,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -3850,9 +3859,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -3890,17 +3899,17 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -3930,9 +3939,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -3940,7 +3949,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -3959,15 +3968,15 @@ Final LF, normal-order evaluated:
 
 Derivation 26
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -3977,9 +3986,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -4005,7 +4014,7 @@ Final LF, normal-order evaluated:
 
 Derivation 27
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4013,7 +4022,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -4023,9 +4032,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -4059,9 +4068,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -4099,21 +4108,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -4142,13 +4151,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4156,7 +4165,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -4185,20 +4194,20 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -4227,12 +4236,12 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4240,7 +4249,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PROMISES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -4269,9 +4278,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -4312,9 +4321,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -4355,13 +4364,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PROMISES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PROMISES JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -4406,12 +4415,12 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PROMISES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -4460,17 +4469,17 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -4501,9 +4510,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4511,7 +4520,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -4528,15 +4537,15 @@ Final LF, normal-order evaluated:
 
 Derivation 39
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -4550,9 +4559,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -4574,7 +4583,7 @@ Final LF, normal-order evaluated:
 
 Derivation 40
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4582,7 +4591,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -4596,9 +4605,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -4632,9 +4641,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -4678,17 +4687,17 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -4726,9 +4735,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4736,7 +4745,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -4755,15 +4764,15 @@ Final LF, normal-order evaluated:
 
 Derivation 44
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -4782,9 +4791,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -4808,7 +4817,7 @@ Final LF, normal-order evaluated:
 
 Derivation 45
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4816,7 +4825,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -4835,9 +4844,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -4878,9 +4887,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -4917,27 +4926,27 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PROMISES JOHN TO) := S/VP
+>B    (MARY)(PROMISES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PROMISES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -4963,19 +4972,19 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PROMISES JOHN TO) := S/VP
+>B    (MARY)(PROMISES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -4983,7 +4992,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PROMISES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -5013,23 +5022,23 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PROMISES JOHN)(TO) := S/VP
+>B    (MARY PROMISES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PROMISES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -5058,15 +5067,15 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PROMISES JOHN)(TO) := S/VP
+>B    (MARY PROMISES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -5074,7 +5083,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PROMISES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -5108,9 +5117,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PROMISES JOHN)(TO) := S/VP
+>B    (MARY PROMISES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -5118,15 +5127,15 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PROMISES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -5162,9 +5171,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PROMISES JOHN)(TO) := S/VP
+>B    (MARY PROMISES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -5172,7 +5181,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -5180,7 +5189,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PROMISES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -5207,9 +5216,9 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -5254,12 +5263,12 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PROMISES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -5312,9 +5321,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -5362,9 +5371,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -5407,19 +5416,19 @@ LEX   (JOHN) := NP
         : J
 >     (PROMISES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PROMISES JOHN)(TO) := (S\^NP)/VP
+>B    (PROMISES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PROMISES JOHN TO) := S/VP
+>B    (MARY)(PROMISES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PROMISES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -5466,15 +5475,15 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PROMISES JOHN)(TO) := S/VP
+>B    (MARY PROMISES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PROMISES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -5524,9 +5533,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PROMISES JOHN)(TO) := S/VP
+>B    (MARY PROMISES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -5534,7 +5543,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PROMISE (P Y)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PROMISES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -5586,17 +5595,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -5629,9 +5638,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -5639,7 +5648,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -5662,15 +5671,15 @@ Final LF, normal-order evaluated:
 
 Derivation 3
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -5680,9 +5689,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -5711,7 +5720,7 @@ Final LF, normal-order evaluated:
 
 Derivation 4
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -5719,7 +5728,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -5729,9 +5738,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -5768,9 +5777,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -5811,17 +5820,17 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -5851,9 +5860,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -5861,7 +5870,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -5880,15 +5889,15 @@ Final LF, normal-order evaluated:
 
 Derivation 8
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -5898,9 +5907,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -5926,7 +5935,7 @@ Final LF, normal-order evaluated:
 
 Derivation 9
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -5934,7 +5943,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -5944,9 +5953,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -5980,9 +5989,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -6020,21 +6029,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -6066,13 +6075,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6080,7 +6089,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -6112,19 +6121,19 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -6151,11 +6160,11 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6163,7 +6172,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -6190,9 +6199,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -6236,9 +6245,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -6279,13 +6288,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (EXPECTS JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -6333,11 +6342,11 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (EXPECTS JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -6379,17 +6388,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -6419,9 +6428,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6429,7 +6438,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -6448,15 +6457,15 @@ Final LF, normal-order evaluated:
 
 Derivation 21
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -6466,9 +6475,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -6494,7 +6503,7 @@ Final LF, normal-order evaluated:
 
 Derivation 22
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6502,7 +6511,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -6512,9 +6521,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -6548,9 +6557,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -6588,17 +6597,17 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -6628,9 +6637,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6638,7 +6647,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -6657,15 +6666,15 @@ Final LF, normal-order evaluated:
 
 Derivation 26
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -6675,9 +6684,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -6703,7 +6712,7 @@ Final LF, normal-order evaluated:
 
 Derivation 27
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6711,7 +6720,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -6721,9 +6730,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -6757,9 +6766,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -6797,21 +6806,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -6840,13 +6849,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6854,7 +6863,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -6883,19 +6892,19 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -6922,11 +6931,11 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -6934,7 +6943,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (EXPECTS JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -6961,9 +6970,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -7004,9 +7013,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -7047,13 +7056,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (EXPECTS)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (EXPECTS JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -7098,11 +7107,11 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (EXPECTS JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -7147,17 +7156,17 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -7186,9 +7195,9 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -7196,7 +7205,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -7212,15 +7221,15 @@ Final LF, normal-order evaluated:
 
 Derivation 39
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -7233,9 +7242,9 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -7256,7 +7265,7 @@ Final LF, normal-order evaluated:
 
 Derivation 40
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -7264,7 +7273,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -7277,9 +7286,9 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -7311,9 +7320,9 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -7355,17 +7364,17 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -7402,9 +7411,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -7412,7 +7421,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -7431,15 +7440,15 @@ Final LF, normal-order evaluated:
 
 Derivation 44
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -7457,9 +7466,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -7483,7 +7492,7 @@ Final LF, normal-order evaluated:
 
 Derivation 45
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -7491,7 +7500,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -7509,9 +7518,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -7551,9 +7560,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -7590,25 +7599,25 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
->B    (MARY)(EXPECTS JOHN TO) := S/VP
+>B    (MARY)(EXPECTS JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY EXPECTS JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -7633,17 +7642,17 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
->B    (MARY)(EXPECTS JOHN TO) := S/VP
+>B    (MARY)(EXPECTS JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -7651,7 +7660,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY EXPECTS JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -7679,23 +7688,23 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY EXPECTS JOHN)(TO) := S/VP
+>B    (MARY EXPECTS JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY EXPECTS JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -7723,15 +7732,15 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY EXPECTS JOHN)(TO) := S/VP
+>B    (MARY EXPECTS JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -7739,7 +7748,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY EXPECTS JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -7772,9 +7781,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY EXPECTS JOHN)(TO) := S/VP
+>B    (MARY EXPECTS JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -7782,15 +7791,15 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY EXPECTS JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -7825,9 +7834,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY EXPECTS JOHN)(TO) := S/VP
+>B    (MARY EXPECTS JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -7835,7 +7844,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -7843,7 +7852,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY EXPECTS JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -7870,9 +7879,9 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -7917,11 +7926,11 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (EXPECTS JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -7971,9 +7980,9 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -8020,9 +8029,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -8065,17 +8074,17 @@ LEX   (JOHN) := NP
         : J
 >     (EXPECTS)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (EXPECTS JOHN)(TO) := (S\^NP)/VP
+>B    (EXPECTS JOHN)(TO) := (S\^NP)/V
         : (LAM X (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
->B    (MARY)(EXPECTS JOHN TO) := S/VP
+>B    (MARY)(EXPECTS JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY EXPECTS JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -8120,15 +8129,15 @@ LEX   (JOHN) := NP
 >B    (MARY)(EXPECTS JOHN) := S/^VP
         : (LAM X
            ((LAM P (P M)) (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY EXPECTS JOHN)(TO) := S/VP
+>B    (MARY EXPECTS JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY EXPECTS JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -8177,9 +8186,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY EXPECTS JOHN)(TO) := S/VP
+>B    (MARY EXPECTS JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -8187,7 +8196,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y ((EXPECT (P X)) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY EXPECTS JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -8325,17 +8334,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -8368,9 +8377,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -8378,7 +8387,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -8401,15 +8410,15 @@ Final LF, normal-order evaluated:
 
 Derivation 3
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -8419,9 +8428,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -8450,7 +8459,7 @@ Final LF, normal-order evaluated:
 
 Derivation 4
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -8458,7 +8467,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -8468,9 +8477,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -8507,9 +8516,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -8550,17 +8559,17 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -8590,9 +8599,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -8600,7 +8609,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -8619,15 +8628,15 @@ Final LF, normal-order evaluated:
 
 Derivation 8
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -8637,9 +8646,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -8665,7 +8674,7 @@ Final LF, normal-order evaluated:
 
 Derivation 9
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -8673,7 +8682,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -8683,9 +8692,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -8719,9 +8728,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -8759,21 +8768,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -8806,13 +8815,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -8820,7 +8829,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -8853,20 +8862,20 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -8895,12 +8904,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -8908,7 +8917,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -8937,9 +8946,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -8984,9 +8993,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -9027,13 +9036,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -9082,12 +9091,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -9132,17 +9141,17 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -9172,9 +9181,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -9182,7 +9191,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -9201,15 +9210,15 @@ Final LF, normal-order evaluated:
 
 Derivation 21
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -9219,9 +9228,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -9247,7 +9256,7 @@ Final LF, normal-order evaluated:
 
 Derivation 22
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -9255,7 +9264,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -9265,9 +9274,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -9301,9 +9310,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -9341,17 +9350,17 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -9381,9 +9390,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -9391,7 +9400,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -9410,15 +9419,15 @@ Final LF, normal-order evaluated:
 
 Derivation 26
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := NP
         : M
@@ -9428,9 +9437,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -9456,7 +9465,7 @@ Final LF, normal-order evaluated:
 
 Derivation 27
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -9464,7 +9473,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := NP
         : M
@@ -9474,9 +9483,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -9510,9 +9519,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -9550,21 +9559,21 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -9593,13 +9602,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -9607,7 +9616,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\NP
         : ((LAM X
@@ -9636,20 +9645,20 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -9678,12 +9687,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -9691,7 +9700,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (PERSUADES JOHN TO)(HIT THE TARGET) := S\^NP
         : ((LAM X
@@ -9720,9 +9729,9 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -9763,9 +9772,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -9806,13 +9815,13 @@ LEX   (JOHN) := ((S\NP)/VP)\(((S\NP)/VP)/NP)
         : (LAM P (P J))
 <     (PERSUADES)(JOHN) := (S\NP)/VP
         : ((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\NP)/V
         : (LAM X
            (((LAM P (P J)) (LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\NP)/^NP
         : (LAM X
@@ -9858,12 +9867,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -9912,17 +9921,17 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -9953,9 +9962,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -9963,7 +9972,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -9980,15 +9989,15 @@ Final LF, normal-order evaluated:
 
 Derivation 39
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -10002,9 +10011,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -10026,7 +10035,7 @@ Final LF, normal-order evaluated:
 
 Derivation 40
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -10034,7 +10043,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -10048,9 +10057,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -10084,9 +10093,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -10130,17 +10139,17 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P)
@@ -10178,9 +10187,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -10188,7 +10197,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (TO)(HIT THE TARGET) := VP
         : ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
@@ -10207,15 +10216,15 @@ Final LF, normal-order evaluated:
 
 Derivation 44
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -10234,9 +10243,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y)))))
 <     (TO)(HIT THE TARGET) := VP
@@ -10260,7 +10269,7 @@ Final LF, normal-order evaluated:
 
 Derivation 45
 --------------
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -10268,7 +10277,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 LEX   (MARY) := S/(S\NP)
         : (LAM P (P M))
@@ -10287,9 +10296,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-VP-INF-RAISE (HIT THE TARGET) := VP\(VP/VP)
+VP-INF-RAISE (HIT THE TARGET) := VP\(VP/V)
         : ((LAM LF (LAM P (P LF)))
            ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET)))
 <     (TO)(HIT THE TARGET) := VP
@@ -10330,9 +10339,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -10369,27 +10378,27 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PERSUADES JOHN TO) := S/VP
+>B    (MARY)(PERSUADES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -10415,19 +10424,19 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PERSUADES JOHN TO) := S/VP
+>B    (MARY)(PERSUADES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -10435,7 +10444,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -10465,23 +10474,23 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -10510,15 +10519,15 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -10526,7 +10535,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -10560,9 +10569,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -10570,15 +10579,15 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
-LEX   (THE) := (VP\(VP/NP))/*N
+LEX   (THE) := (V\(V/NP))/*N
         : (LAM X (LAM P (P X)))
 LEX   (TARGET) := N
         : TARGET
->     (THE)(TARGET) := VP\(VP/NP)
+>     (THE)(TARGET) := V\(V/NP)
         : ((LAM X (LAM P (P X))) TARGET)
-<     (HIT)(THE TARGET) := VP
+<     (HIT)(THE TARGET) := V
         : (((LAM X (LAM P (P X))) TARGET) (LAM X (LAM Y ((HIT X) Y))))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -10614,9 +10623,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -10624,7 +10633,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 LEX   (THE) := NP/*N
         : (LAM X (DEF X))
@@ -10632,7 +10641,7 @@ LEX   (TARGET) := N
         : TARGET
 >     (THE)(TARGET) := NP
         : ((LAM X (DEF X)) TARGET)
->     (HIT)(THE TARGET) := VP
+>     (HIT)(THE TARGET) := V
         : ((LAM X (LAM Y ((HIT X) Y))) ((LAM X (DEF X)) TARGET))
 >     (MARY PERSUADES JOHN TO)(HIT THE TARGET) := S
         : ((LAM X
@@ -10659,9 +10668,9 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -10706,12 +10715,12 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (PERSUADES JOHN TO)(HIT) := (S\^NP)/^NP
         : (LAM X
@@ -10764,9 +10773,9 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -10814,9 +10823,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (TO)(HIT) := VP/^NP
         : (LAM X ((LAM P P) ((LAM X (LAM Y ((HIT X) Y))) X)))
@@ -10859,19 +10868,19 @@ LEX   (JOHN) := NP
         : J
 >     (PERSUADES)(JOHN) := (S\^NP)/^VP
         : ((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (PERSUADES JOHN)(TO) := (S\^NP)/VP
+>B    (PERSUADES JOHN)(TO) := (S\^NP)/V
         : (LAM X
            (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) ((LAM P P) X)))
->B    (MARY)(PERSUADES JOHN TO) := S/VP
+>B    (MARY)(PERSUADES JOHN TO) := S/V
         : (LAM X
            ((LAM P (P M))
             ((LAM X
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J)
                ((LAM P P) X)))
              X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PERSUADES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -10918,15 +10927,15 @@ LEX   (JOHN) := NP
         : (LAM X
            ((LAM P (P M))
             (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            ((LAM X
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) J) X)))
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PERSUADES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -10976,9 +10985,9 @@ LEX   (JOHN) := NP
              ((LAM P (P M))
               (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
            J)
-LEX   (TO) := VP/VP
+LEX   (TO) := VP/V
         : (LAM P P)
->B    (MARY PERSUADES JOHN)(TO) := S/VP
+>B    (MARY PERSUADES JOHN)(TO) := S/V
         : (LAM X
            (((LAM X
               (LAM Y
@@ -10986,7 +10995,7 @@ LEX   (TO) := VP/VP
                 (((LAM X (LAM P (LAM Y (((PERSUADE (P X)) X) Y)))) X) Y))))
              J)
             ((LAM P P) X)))
-LEX   (HIT) := VP/^NP
+LEX   (HIT) := V/^NP
         : (LAM X (LAM Y ((HIT X) Y)))
 >B    (MARY PERSUADES JOHN TO)(HIT) := S/^NP
         : (LAM X
@@ -11122,9 +11131,9 @@ Derivation 1
 --------------
 LEX   (ARı) := NP
         : BEE
-LEX   (SOK) := VP\NP
+LEX   (SOK) := V\NP
         : (LAM X (LAM Y ((STING X) Y)))
-LEX   (-AN) := (NP/NP)\VP
+LEX   (-AN) := (NP/NP)\V
         : (LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
 <B    (SOK)(-AN) := (NP/NP)\NP
         : (LAM X
@@ -11153,9 +11162,9 @@ Derivation 2
 --------------
 LEX   (ARı) := (NP/NP)/((NP/NP)\NP)
         : (LAM P (P BEE))
-LEX   (SOK) := VP\NP
+LEX   (SOK) := V\NP
         : (LAM X (LAM Y ((STING X) Y)))
-LEX   (-AN) := (NP/NP)\VP
+LEX   (-AN) := (NP/NP)\V
         : (LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
 <B    (SOK)(-AN) := (NP/NP)\NP
         : (LAM X
@@ -11184,11 +11193,11 @@ Derivation 3
 --------------
 LEX   (ARı) := NP
         : BEE
-LEX   (SOK) := VP\NP
+LEX   (SOK) := V\NP
         : (LAM X (LAM Y ((STING X) Y)))
-<     (ARı)(SOK) := VP
+<     (ARı)(SOK) := V
         : ((LAM X (LAM Y ((STING X) Y))) BEE)
-LEX   (-AN) := (NP/NP)\VP
+LEX   (-AN) := (NP/NP)\V
         : (LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
 <     (ARı SOK)(-AN) := NP/NP
         : ((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
@@ -11214,9 +11223,9 @@ FIG2B
 
 Derivation 1
 --------------
-LEX   (arı sok) := VP
+LEX   (arı sok) := V
         : (LAM X ((CAUSE (INIT (STUNG X))) BEE))
-LEX   (-AN) := (NP/NP)\VP
+LEX   (-AN) := (NP/NP)\V
         : (LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
 <     ("arı sok")(-AN) := NP/NP
         : ((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
