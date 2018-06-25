@@ -1,5 +1,5 @@
 
-> (load-grammar "fragments" :maker 'sbcl)
+> (lg "fragments" :maker 'sbcl)
 
 
 =========================== p r e p a r i n g ===============================
@@ -11033,7 +11033,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|31A|
+|33A|
 ========
 
 
@@ -11078,7 +11078,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|31B|
+|33B|
 ========
 
 
@@ -11160,37 +11160,6 @@ Final LF, normal-order evaluated:
 
 Derivation 2
 --------------
-LEX   (ARı) := (NP/NP)/((NP/NP)\NP)
-        : (LAM P (P BEE))
-LEX   (SOK) := V\NP
-        : (LAM X (LAM Y ((STING X) Y)))
-LEX   (-AN) := (NP/NP)\V
-        : (LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
-<B    (SOK)(-AN) := (NP/NP)\NP
-        : (LAM X
-           ((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
-            ((LAM X (LAM Y ((STING X) Y))) X)))
->     (ARı)(SOK -AN) := NP/NP
-        : ((LAM P (P BEE))
-           (LAM X
-            ((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
-             ((LAM X (LAM Y ((STING X) Y))) X))))
-LEX   (KıZ) := NP
-        : GIRL
->     (ARı SOK -AN)(KıZ) := NP
-        : (((LAM P (P BEE))
-            (LAM X
-             ((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
-              ((LAM X (LAM Y ((STING X) Y))) X))))
-           GIRL)
-
-Final LF, normal-order evaluated: 
-
-    (LAM Z ((AND ((STING BEE) Z)) (GIRL Z))) =
-    (\ Z . AND (STING BEE Z) (GIRL Z))
-
-Derivation 3
---------------
 LEX   (ARı) := NP
         : BEE
 LEX   (SOK) := V\NP
@@ -11207,6 +11176,31 @@ LEX   (KıZ) := NP
 >     (ARı SOK -AN)(KıZ) := NP
         : (((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
             ((LAM X (LAM Y ((STING X) Y))) BEE))
+           GIRL)
+
+Final LF, normal-order evaluated: 
+
+    (LAM Z ((AND ((STING BEE) Z)) (GIRL Z))) =
+    (\ Z . AND (STING BEE Z) (GIRL Z))
+
+Derivation 3
+--------------
+LEX   (ARı) := V/(V\NP)
+        : (LAM P (P BEE))
+LEX   (SOK) := V\NP
+        : (LAM X (LAM Y ((STING X) Y)))
+>     (ARı)(SOK) := V
+        : ((LAM P (P BEE)) (LAM X (LAM Y ((STING X) Y))))
+LEX   (-AN) := (NP/NP)\V
+        : (LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
+<     (ARı SOK)(-AN) := NP/NP
+        : ((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
+           ((LAM P (P BEE)) (LAM X (LAM Y ((STING X) Y)))))
+LEX   (KıZ) := NP
+        : GIRL
+>     (ARı SOK -AN)(KıZ) := NP
+        : (((LAM P (LAM Q (LAM Z ((AND (P Z)) (Q Z)))))
+            ((LAM P (P BEE)) (LAM X (LAM Y ((STING X) Y)))))
            GIRL)
 
 Final LF, normal-order evaluated: 
@@ -11310,7 +11304,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|37A|
+FIG4A
 ========
 
 
@@ -11357,7 +11351,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|37B|
+FIG4B
 ========
 
 
@@ -11402,7 +11396,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-FIG4
+FIG5
 ========
 
 
@@ -11459,7 +11453,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|43A|
+|44A|
 ========
 
 
@@ -11541,13 +11535,13 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|43B|
+|44B|
 ========
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|43C|
+|44C|
 ========
 
 
@@ -11700,19 +11694,19 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|43D|
+|44D|
 ========
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-|43E|
+44EE1
 ========
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-4300.0
+43EE2
 ========
 
 
@@ -11893,7 +11887,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-FIG5B
+FIG6B
 ========
 
 
@@ -11944,7 +11938,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-FIG5C
+FIG6C
 ========
 
 
@@ -12026,7 +12020,7 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-47
+48
 ========
 
 
@@ -14046,7 +14040,7 @@ Outer: (((PERSUADE ((HIT (DEF TARGET)) J)) J) M)
 
 
 =======
-|31A|
+|33A|
 ========
 
 
@@ -14066,7 +14060,7 @@ Outer: (LAM Y ((AND ((SAW CAT) Y)) (WOMAN Y)))
 
 
 =======
-|31B|
+|33B|
 ========
 
 
@@ -14146,7 +14140,7 @@ Outer: ((FORALL XX) ((IMP (BEE XX)) ((STING (TOP GIRL)) XX)))
 
 
 =======
-|37A|
+FIG4A
 ========
 
 
@@ -14166,7 +14160,7 @@ Outer: ((STING (BACK GIRL)) (BACK BEE))
 
 
 =======
-|37B|
+FIG4B
 ========
 
 
@@ -14186,7 +14180,7 @@ Outer: ((STING (BACK GIRL)) (BACK BEE))
 
 
 =======
-FIG4
+FIG5
 ========
 
 
@@ -14206,7 +14200,7 @@ Outer: ((RHEME (FORALL XX)) ((IMP (BEES XX)) ((STING (BACK GIRL)) XX)))
 
 
 =======
-|43A|
+|44A|
 ========
 
 
@@ -14234,11 +14228,11 @@ Outer: (NOT ((SAW (PLU CAR)) I))
 
 
 =======
-|43B|
+|44B|
 ========
 
 =======
-|43C|
+|44C|
 ========
 
 
@@ -14282,15 +14276,15 @@ Outer: (NOT ((AND ((SAW THEM) I)) ((NOTEQ I) THEM)))
 
 
 =======
-|43D|
+|44D|
 ========
 
 =======
-|43E|
+44EE1
 ========
 
 =======
-4300.0
+43EE2
 ========
 
 
@@ -14346,7 +14340,7 @@ Outer: (NOT ((AND ((SAW THEM) PAUL)) ((NOTEQ PAUL) THEM)))
 
 
 =======
-FIG5B
+FIG6B
 ========
 
 
@@ -14366,7 +14360,7 @@ Outer: ((AND ((SAW THEM) EVERYBODY)) ((NOTEQ EVERYBODY) THEM))
 
 
 =======
-FIG5C
+FIG6C
 ========
 
 
@@ -14394,7 +14388,7 @@ Outer: (NOT ((SAW (PLU CAR)) I))
 
 
 =======
-47
+48
 ========
 
 
