@@ -1,9 +1,16 @@
-;; - cem bozsahin & mark steedman 2015-2017
+;; - cem bozsahin & mark steedman 2015-2018
 ;; The complete set of derivations in pftl and its supplement (suffix s means supplement)
 ;; numbers are indexes to the paper example numbers
 ;; This is not part of CCGlab package 
 ;; load this file in CCGlab after you did (load-grammar "pftl") or 
 ;; (load-model "pftl"), then run the relevant function defined below.
+
+(setf *f-subbar* t  ; these are off by default: turn them on
+      *b-subbar* t
+      *fx-subbar* t
+      *bx-subbar* t)
+
+;; set up a database of examples 
 (defparameter *pftl* '(
 (4 (sally sees harry))
 (14 (balb us mur um aedificat))
@@ -60,6 +67,13 @@
 (63s (sino ang kabibili lang "ng tela"))
 (65s (ano ang sinabi "ni pedro" na binili "ni linda"))
 (69s (huhugasan ko at pupunasan mo ang-mga-pinggan))
+;; below are experimental
+(l1 (persuade Harry to buy and Barry to sell))
+(l2 (persuade to go to London John))
+(l3 (want to go and promise to accompany to London)) ;; think of who didja ...
+(o1 (what you can)) ;; and what you must not count on
+(o2 (what Terry asked)) ;; and what Mary promised Harry to read
+(s2 (gave without reading)) ;; the book I gave without reading and lent wout stamping to Harry
 ))
 
 (defun  pftl-ders()
