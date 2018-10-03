@@ -32,6 +32,8 @@ T
 T
 > (pftl-ders)
 
+"CCGlab, version 3.6.1.L"
+
 =======
 4
 ========
@@ -3320,10 +3322,10 @@ LEX   (VULT) := (S\NP)\(S\NP)
 Final LF, normal-order evaluated: 
 
     (LAM X
-     ((AND ((BUILD (LAM G7036 ((WANT (X G7036)) G7036))) BALB))
-      (WALL (LAM G7036 ((WANT (X G7036)) G7036))))) =
-    (\ X . AND (BUILD (\ G7043 . WANT (X G7043) G7043) BALB)
-     (WALL (\ G7043 . WANT (X G7043) G7043)))
+     ((AND ((BUILD (LAM G658 ((WANT (X G658)) G658))) BALB))
+      (WALL (LAM G658 ((WANT (X G658)) G658))))) =
+    (\ X . AND (BUILD (\ G665 . WANT (X G665) G665) BALB)
+     (WALL (\ G665 . WANT (X G665) G665)))
 
 Derivation 6
 --------------
@@ -3372,10 +3374,10 @@ LEX   (VULT) := (S\NP)\(S\NP)
 Final LF, normal-order evaluated: 
 
     (LAM X
-     ((AND ((BUILD (LAM G7050 ((WANT (X G7050)) G7050))) BALB))
-      (WALL (LAM G7050 ((WANT (X G7050)) G7050))))) =
-    (\ X . AND (BUILD (\ G7057 . WANT (X G7057) G7057) BALB)
-     (WALL (\ G7057 . WANT (X G7057) G7057)))
+     ((AND ((BUILD (LAM G672 ((WANT (X G672)) G672))) BALB))
+      (WALL (LAM G672 ((WANT (X G672)) G672))))) =
+    (\ X . AND (BUILD (\ G679 . WANT (X G679) G679) BALB)
+     (WALL (\ G679 . WANT (X G679) G679)))
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
@@ -5227,24 +5229,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7166
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7166))) CAMIER))
-            (Q G7166)))))
+          (LAM G788
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G788))) CAMIER))
+            (Q G788)))))
         (LAM Q
-         (LAM G7168
+         (LAM G790
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7168))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G790))) CAMIER))
              MERCIER))
-           (Q G7168)))))
+           (Q G790)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7180 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7180)) CAMIER)
-       (Q G7180))
-      (\ Q . \ G7182 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7182)) CAMIER) MERCIER)
-       (Q G7182))
+      (\ Q . \ G802 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G802)) CAMIER)
+       (Q G802))
+      (\ Q . \ G804 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G804)) CAMIER) MERCIER)
+       (Q G804))
       (\ X . CEO X)))
 
 Derivation 2
@@ -5392,24 +5394,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7194
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7194))) CAMIER))
-            (Q G7194)))))
+          (LAM G816
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G816))) CAMIER))
+            (Q G816)))))
         (LAM Q
-         (LAM G7196
+         (LAM G818
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7196))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G818))) CAMIER))
              MERCIER))
-           (Q G7196)))))
+           (Q G818)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7208 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7208)) CAMIER)
-       (Q G7208))
-      (\ Q . \ G7210 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7210)) CAMIER) MERCIER)
-       (Q G7210))
+      (\ Q . \ G830 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G830)) CAMIER)
+       (Q G830))
+      (\ Q . \ G832 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G832)) CAMIER) MERCIER)
+       (Q G832))
       (\ X . CEO X)))
 
 Derivation 3
@@ -5564,20 +5566,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7223
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7223))) CAMIER))
-            (Q G7223)))))
+          (LAM G845
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G845))) CAMIER))
+            (Q G845)))))
         (LAM Q
-         (LAM G7226
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7226))) MERCIER))
-           (Q G7226)))))
+         (LAM G848
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G848))) MERCIER))
+           (Q G848)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7239 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7239)) CAMIER)
-       (Q G7239))
-      (\ Q . \ G7242 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7242)) MERCIER) (Q G7242))
+      (\ Q . \ G861 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G861)) CAMIER)
+       (Q G861))
+      (\ Q . \ G864 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G864)) MERCIER) (Q G864))
       (\ X . CEO X)))
 
 Derivation 4
@@ -5729,20 +5731,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7256
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7256))) CAMIER))
-            (Q G7256)))))
+          (LAM G878
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G878))) CAMIER))
+            (Q G878)))))
         (LAM Q
-         (LAM G7259
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7259))) MERCIER))
-           (Q G7259)))))
+         (LAM G881
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G881))) MERCIER))
+           (Q G881)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7273 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7273)) CAMIER)
-       (Q G7273))
-      (\ Q . \ G7276 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7276)) MERCIER) (Q G7276))
+      (\ Q . \ G895 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G895)) CAMIER)
+       (Q G895))
+      (\ Q . \ G898 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G898)) MERCIER) (Q G898))
       (\ X . CEO X)))
 
 Derivation 5
@@ -5919,24 +5921,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7288
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7288))) CAMIER))
-            (Q G7288)))))
+          (LAM G910
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G910))) CAMIER))
+            (Q G910)))))
         (LAM Q
-         (LAM G7290
+         (LAM G912
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7290))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G912))) CAMIER))
              MERCIER))
-           (Q G7290)))))
+           (Q G912)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7302 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7302)) CAMIER)
-       (Q G7302))
-      (\ Q . \ G7304 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7304)) CAMIER) MERCIER)
-       (Q G7304))
+      (\ Q . \ G924 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G924)) CAMIER)
+       (Q G924))
+      (\ Q . \ G926 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G926)) CAMIER) MERCIER)
+       (Q G926))
       (\ X . CEO X)))
 
 Derivation 6
@@ -6083,24 +6085,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7316
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7316))) CAMIER))
-            (Q G7316)))))
+          (LAM G938
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G938))) CAMIER))
+            (Q G938)))))
         (LAM Q
-         (LAM G7318
+         (LAM G940
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7318))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G940))) CAMIER))
              MERCIER))
-           (Q G7318)))))
+           (Q G940)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7330 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7330)) CAMIER)
-       (Q G7330))
-      (\ Q . \ G7332 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7332)) CAMIER) MERCIER)
-       (Q G7332))
+      (\ Q . \ G952 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G952)) CAMIER)
+       (Q G952))
+      (\ Q . \ G954 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G954)) CAMIER) MERCIER)
+       (Q G954))
       (\ X . CEO X)))
 
 Derivation 7
@@ -6254,20 +6256,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7345
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7345))) CAMIER))
-            (Q G7345)))))
+          (LAM G967
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G967))) CAMIER))
+            (Q G967)))))
         (LAM Q
-         (LAM G7348
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7348))) MERCIER))
-           (Q G7348)))))
+         (LAM G970
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G970))) MERCIER))
+           (Q G970)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7361 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7361)) CAMIER)
-       (Q G7361))
-      (\ Q . \ G7364 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7364)) MERCIER) (Q G7364))
+      (\ Q . \ G983 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G983)) CAMIER)
+       (Q G983))
+      (\ Q . \ G986 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G986)) MERCIER) (Q G986))
       (\ X . CEO X)))
 
 Derivation 8
@@ -6418,20 +6420,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7378
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7378))) CAMIER))
-            (Q G7378)))))
+          (LAM G1000
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1000))) CAMIER))
+            (Q G1000)))))
         (LAM Q
-         (LAM G7381
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7381))) MERCIER))
-           (Q G7381)))))
+         (LAM G1003
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1003))) MERCIER))
+           (Q G1003)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7395 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7395)) CAMIER)
-       (Q G7395))
-      (\ Q . \ G7398 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7398)) MERCIER) (Q G7398))
+      (\ Q . \ G1017 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1017)) CAMIER)
+       (Q G1017))
+      (\ Q . \ G1020 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1020)) MERCIER) (Q G1020))
       (\ X . CEO X)))
 
 Derivation 9
@@ -6572,24 +6574,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7410
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7410))) CAMIER))
-            (Q G7410)))))
+          (LAM G1032
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1032))) CAMIER))
+            (Q G1032)))))
         (LAM Q
-         (LAM G7413
+         (LAM G1035
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7413))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1035))) CAMIER))
              MERCIER))
-           (Q G7413)))))
+           (Q G1035)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7424 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7424)) CAMIER)
-       (Q G7424))
-      (\ Q . \ G7427 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7427)) CAMIER) MERCIER)
-       (Q G7427))
+      (\ Q . \ G1046 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1046)) CAMIER)
+       (Q G1046))
+      (\ Q . \ G1049 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1049)) CAMIER) MERCIER)
+       (Q G1049))
       (\ X . CEO X)))
 
 Derivation 10
@@ -6731,24 +6733,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7438
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7438))) CAMIER))
-            (Q G7438)))))
+          (LAM G1060
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1060))) CAMIER))
+            (Q G1060)))))
         (LAM Q
-         (LAM G7440
+         (LAM G1062
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7440))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1062))) CAMIER))
              MERCIER))
-           (Q G7440)))))
+           (Q G1062)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7452 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7452)) CAMIER)
-       (Q G7452))
-      (\ Q . \ G7454 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7454)) CAMIER) MERCIER)
-       (Q G7454))
+      (\ Q . \ G1074 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1074)) CAMIER)
+       (Q G1074))
+      (\ Q . \ G1076 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1076)) CAMIER) MERCIER)
+       (Q G1076))
       (\ X . CEO X)))
 
 Derivation 11
@@ -6872,24 +6874,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7466
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7466))) CAMIER))
-            (Q G7466)))))
+          (LAM G1088
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1088))) CAMIER))
+            (Q G1088)))))
         (LAM Q
-         (LAM G7469
+         (LAM G1091
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7469))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1091))) CAMIER))
              MERCIER))
-           (Q G7469)))))
+           (Q G1091)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7480 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7480)) CAMIER)
-       (Q G7480))
-      (\ Q . \ G7483 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7483)) CAMIER) MERCIER)
-       (Q G7483))
+      (\ Q . \ G1102 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1102)) CAMIER)
+       (Q G1102))
+      (\ Q . \ G1105 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1105)) CAMIER) MERCIER)
+       (Q G1105))
       (\ X . CEO X)))
 
 Derivation 12
@@ -7042,24 +7044,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7494
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7494))) CAMIER))
-            (Q G7494)))))
+          (LAM G1116
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1116))) CAMIER))
+            (Q G1116)))))
         (LAM Q
-         (LAM G7496
+         (LAM G1118
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7496))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1118))) CAMIER))
              MERCIER))
-           (Q G7496)))))
+           (Q G1118)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7507 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7507)) CAMIER)
-       (Q G7507))
-      (\ Q . \ G7509 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7509)) CAMIER) MERCIER)
-       (Q G7509))
+      (\ Q . \ G1129 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1129)) CAMIER)
+       (Q G1129))
+      (\ Q . \ G1131 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1131)) CAMIER) MERCIER)
+       (Q G1131))
       (\ X . CEO X)))
 
 Derivation 13
@@ -7184,24 +7186,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7520
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7520))) CAMIER))
-            (Q G7520)))))
+          (LAM G1142
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1142))) CAMIER))
+            (Q G1142)))))
         (LAM Q
-         (LAM G7522
+         (LAM G1144
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7522))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1144))) CAMIER))
              MERCIER))
-           (Q G7522)))))
+           (Q G1144)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7533 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7533)) CAMIER)
-       (Q G7533))
-      (\ Q . \ G7535 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7535)) CAMIER) MERCIER)
-       (Q G7535))
+      (\ Q . \ G1155 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1155)) CAMIER)
+       (Q G1155))
+      (\ Q . \ G1157 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1157)) CAMIER) MERCIER)
+       (Q G1157))
       (\ X . CEO X)))
 
 Derivation 14
@@ -7340,24 +7342,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7546
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7546))) CAMIER))
-            (Q G7546)))))
+          (LAM G1168
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1168))) CAMIER))
+            (Q G1168)))))
         (LAM Q
-         (LAM G7549
+         (LAM G1171
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7549))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1171))) CAMIER))
              MERCIER))
-           (Q G7549)))))
+           (Q G1171)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7560 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7560)) CAMIER)
-       (Q G7560))
-      (\ Q . \ G7563 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7563)) CAMIER) MERCIER)
-       (Q G7563))
+      (\ Q . \ G1182 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1182)) CAMIER)
+       (Q G1182))
+      (\ Q . \ G1185 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1185)) CAMIER) MERCIER)
+       (Q G1185))
       (\ X . CEO X)))
 
 Derivation 15
@@ -7497,24 +7499,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7574
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7574))) CAMIER))
-            (Q G7574)))))
+          (LAM G1196
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1196))) CAMIER))
+            (Q G1196)))))
         (LAM Q
-         (LAM G7576
+         (LAM G1198
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7576))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1198))) CAMIER))
              MERCIER))
-           (Q G7576)))))
+           (Q G1198)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7588 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7588)) CAMIER)
-       (Q G7588))
-      (\ Q . \ G7590 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7590)) CAMIER) MERCIER)
-       (Q G7590))
+      (\ Q . \ G1210 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1210)) CAMIER)
+       (Q G1210))
+      (\ Q . \ G1212 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1212)) CAMIER) MERCIER)
+       (Q G1212))
       (\ X . CEO X)))
 
 Derivation 16
@@ -7636,24 +7638,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7602
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7602))) CAMIER))
-            (Q G7602)))))
+          (LAM G1224
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1224))) CAMIER))
+            (Q G1224)))))
         (LAM Q
-         (LAM G7605
+         (LAM G1227
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7605))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1227))) CAMIER))
              MERCIER))
-           (Q G7605)))))
+           (Q G1227)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7616 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7616)) CAMIER)
-       (Q G7616))
-      (\ Q . \ G7619 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7619)) CAMIER) MERCIER)
-       (Q G7619))
+      (\ Q . \ G1238 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1238)) CAMIER)
+       (Q G1238))
+      (\ Q . \ G1241 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1241)) CAMIER) MERCIER)
+       (Q G1241))
       (\ X . CEO X)))
 
 Derivation 17
@@ -7804,24 +7806,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7630
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7630))) CAMIER))
-            (Q G7630)))))
+          (LAM G1252
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1252))) CAMIER))
+            (Q G1252)))))
         (LAM Q
-         (LAM G7632
+         (LAM G1254
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7632))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1254))) CAMIER))
              MERCIER))
-           (Q G7632)))))
+           (Q G1254)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7643 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7643)) CAMIER)
-       (Q G7643))
-      (\ Q . \ G7645 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7645)) CAMIER) MERCIER)
-       (Q G7645))
+      (\ Q . \ G1265 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1265)) CAMIER)
+       (Q G1265))
+      (\ Q . \ G1267 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1267)) CAMIER) MERCIER)
+       (Q G1267))
       (\ X . CEO X)))
 
 Derivation 18
@@ -7944,24 +7946,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7656
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7656))) CAMIER))
-            (Q G7656)))))
+          (LAM G1278
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1278))) CAMIER))
+            (Q G1278)))))
         (LAM Q
-         (LAM G7658
+         (LAM G1280
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7658))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1280))) CAMIER))
              MERCIER))
-           (Q G7658)))))
+           (Q G1280)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7669 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7669)) CAMIER)
-       (Q G7669))
-      (\ Q . \ G7671 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7671)) CAMIER) MERCIER)
-       (Q G7671))
+      (\ Q . \ G1291 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1291)) CAMIER)
+       (Q G1291))
+      (\ Q . \ G1293 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1293)) CAMIER) MERCIER)
+       (Q G1293))
       (\ X . CEO X)))
 
 Derivation 19
@@ -8100,24 +8102,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7682
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7682))) CAMIER))
-            (Q G7682)))))
+          (LAM G1304
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1304))) CAMIER))
+            (Q G1304)))))
         (LAM Q
-         (LAM G7685
+         (LAM G1307
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7685))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1307))) CAMIER))
              MERCIER))
-           (Q G7685)))))
+           (Q G1307)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7696 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7696)) CAMIER)
-       (Q G7696))
-      (\ Q . \ G7699 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7699)) CAMIER) MERCIER)
-       (Q G7699))
+      (\ Q . \ G1318 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1318)) CAMIER)
+       (Q G1318))
+      (\ Q . \ G1321 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1321)) CAMIER) MERCIER)
+       (Q G1321))
       (\ X . CEO X)))
 
 Derivation 20
@@ -8257,24 +8259,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7710
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7710))) CAMIER))
-            (Q G7710)))))
+          (LAM G1332
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1332))) CAMIER))
+            (Q G1332)))))
         (LAM Q
-         (LAM G7712
+         (LAM G1334
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7712))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1334))) CAMIER))
              MERCIER))
-           (Q G7712)))))
+           (Q G1334)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7724 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7724)) CAMIER)
-       (Q G7724))
-      (\ Q . \ G7726 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7726)) CAMIER) MERCIER)
-       (Q G7726))
+      (\ Q . \ G1346 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1346)) CAMIER)
+       (Q G1346))
+      (\ Q . \ G1348 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1348)) CAMIER) MERCIER)
+       (Q G1348))
       (\ X . CEO X)))
 
 Derivation 21
@@ -8410,24 +8412,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7738
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7738))) CAMIER))
-            (Q G7738)))))
+          (LAM G1360
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1360))) CAMIER))
+            (Q G1360)))))
         (LAM Q
-         (LAM G7741
+         (LAM G1363
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7741))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1363))) CAMIER))
              MERCIER))
-           (Q G7741)))))
+           (Q G1363)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7752 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7752)) CAMIER)
-       (Q G7752))
-      (\ Q . \ G7755 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7755)) CAMIER) MERCIER)
-       (Q G7755))
+      (\ Q . \ G1374 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1374)) CAMIER)
+       (Q G1374))
+      (\ Q . \ G1377 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1377)) CAMIER) MERCIER)
+       (Q G1377))
       (\ X . CEO X)))
 
 Derivation 22
@@ -8564,24 +8566,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7766
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7766))) CAMIER))
-            (Q G7766)))))
+          (LAM G1388
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1388))) CAMIER))
+            (Q G1388)))))
         (LAM Q
-         (LAM G7768
+         (LAM G1390
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7768))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1390))) CAMIER))
              MERCIER))
-           (Q G7768)))))
+           (Q G1390)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7780 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7780)) CAMIER)
-       (Q G7780))
-      (\ Q . \ G7782 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7782)) CAMIER) MERCIER)
-       (Q G7782))
+      (\ Q . \ G1402 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1402)) CAMIER)
+       (Q G1402))
+      (\ Q . \ G1404 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1404)) CAMIER) MERCIER)
+       (Q G1404))
       (\ X . CEO X)))
 
 Derivation 23
@@ -8716,20 +8718,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7795
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7795))) CAMIER))
-            (Q G7795)))))
+          (LAM G1417
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1417))) CAMIER))
+            (Q G1417)))))
         (LAM Q
-         (LAM G7798
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7798))) MERCIER))
-           (Q G7798)))))
+         (LAM G1420
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1420))) MERCIER))
+           (Q G1420)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7810 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7810)) CAMIER)
-       (Q G7810))
-      (\ Q . \ G7813 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7813)) MERCIER) (Q G7813))
+      (\ Q . \ G1432 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1432)) CAMIER)
+       (Q G1432))
+      (\ Q . \ G1435 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1435)) MERCIER) (Q G1435))
       (\ X . CEO X)))
 
 Derivation 24
@@ -8865,20 +8867,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7826
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7826))) CAMIER))
-            (Q G7826)))))
+          (LAM G1448
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1448))) CAMIER))
+            (Q G1448)))))
         (LAM Q
-         (LAM G7829
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7829))) MERCIER))
-           (Q G7829)))))
+         (LAM G1451
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1451))) MERCIER))
+           (Q G1451)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7842 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7842)) CAMIER)
-       (Q G7842))
-      (\ Q . \ G7845 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7845)) MERCIER) (Q G7845))
+      (\ Q . \ G1464 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1464)) CAMIER)
+       (Q G1464))
+      (\ Q . \ G1467 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1467)) MERCIER) (Q G1467))
       (\ X . CEO X)))
 
 Derivation 25
@@ -9011,20 +9013,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7857
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7857))) CAMIER))
-            (Q G7857)))))
+          (LAM G1479
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1479))) CAMIER))
+            (Q G1479)))))
         (LAM Q
-         (LAM G7860
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7860))) MERCIER))
-           (Q G7860)))))
+         (LAM G1482
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1482))) MERCIER))
+           (Q G1482)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7872 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7872)) CAMIER)
-       (Q G7872))
-      (\ Q . \ G7875 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7875)) MERCIER) (Q G7875))
+      (\ Q . \ G1494 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1494)) CAMIER)
+       (Q G1494))
+      (\ Q . \ G1497 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1497)) MERCIER) (Q G1497))
       (\ X . CEO X)))
 
 Derivation 26
@@ -9158,20 +9160,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7888
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7888))) CAMIER))
-            (Q G7888)))))
+          (LAM G1510
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1510))) CAMIER))
+            (Q G1510)))))
         (LAM Q
-         (LAM G7891
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G7891))) MERCIER))
-           (Q G7891)))))
+         (LAM G1513
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1513))) MERCIER))
+           (Q G1513)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7904 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7904)) CAMIER)
-       (Q G7904))
-      (\ Q . \ G7907 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G7907)) MERCIER) (Q G7907))
+      (\ Q . \ G1526 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1526)) CAMIER)
+       (Q G1526))
+      (\ Q . \ G1529 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1529)) MERCIER) (Q G1529))
       (\ X . CEO X)))
 
 Derivation 27
@@ -9304,24 +9306,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7918
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7918))) CAMIER))
-            (Q G7918)))))
+          (LAM G1540
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1540))) CAMIER))
+            (Q G1540)))))
         (LAM Q
-         (LAM G7921
+         (LAM G1543
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7921))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1543))) CAMIER))
              MERCIER))
-           (Q G7921)))))
+           (Q G1543)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7932 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7932)) CAMIER)
-       (Q G7932))
-      (\ Q . \ G7935 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7935)) CAMIER) MERCIER)
-       (Q G7935))
+      (\ Q . \ G1554 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1554)) CAMIER)
+       (Q G1554))
+      (\ Q . \ G1557 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1557)) CAMIER) MERCIER)
+       (Q G1557))
       (\ X . CEO X)))
 
 Derivation 28
@@ -9451,24 +9453,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7946
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7946))) CAMIER))
-            (Q G7946)))))
+          (LAM G1568
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1568))) CAMIER))
+            (Q G1568)))))
         (LAM Q
-         (LAM G7949
+         (LAM G1571
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7949))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1571))) CAMIER))
              MERCIER))
-           (Q G7949)))))
+           (Q G1571)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7960 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7960)) CAMIER)
-       (Q G7960))
-      (\ Q . \ G7963 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7963)) CAMIER) MERCIER)
-       (Q G7963))
+      (\ Q . \ G1582 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1582)) CAMIER)
+       (Q G1582))
+      (\ Q . \ G1585 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1585)) CAMIER) MERCIER)
+       (Q G1585))
       (\ X . CEO X)))
 
 Derivation 29
@@ -9612,24 +9614,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G7974
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7974))) CAMIER))
-            (Q G7974)))))
+          (LAM G1596
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1596))) CAMIER))
+            (Q G1596)))))
         (LAM Q
-         (LAM G7977
+         (LAM G1599
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G7977))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1599))) CAMIER))
              MERCIER))
-           (Q G7977)))))
+           (Q G1599)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G7988 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7988)) CAMIER)
-       (Q G7988))
-      (\ Q . \ G7991 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G7991)) CAMIER) MERCIER)
-       (Q G7991))
+      (\ Q . \ G1610 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1610)) CAMIER)
+       (Q G1610))
+      (\ Q . \ G1613 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1613)) CAMIER) MERCIER)
+       (Q G1613))
       (\ X . CEO X)))
 
 Derivation 30
@@ -9767,24 +9769,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8002
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8002))) CAMIER))
-            (Q G8002)))))
+          (LAM G1624
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1624))) CAMIER))
+            (Q G1624)))))
         (LAM Q
-         (LAM G8005
+         (LAM G1627
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8005))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1627))) CAMIER))
              MERCIER))
-           (Q G8005)))))
+           (Q G1627)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8016 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8016)) CAMIER)
-       (Q G8016))
-      (\ Q . \ G8019 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8019)) CAMIER) MERCIER)
-       (Q G8019))
+      (\ Q . \ G1638 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1638)) CAMIER)
+       (Q G1638))
+      (\ Q . \ G1641 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1641)) CAMIER) MERCIER)
+       (Q G1641))
       (\ X . CEO X)))
 
 Derivation 31
@@ -9951,24 +9953,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8030
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8030))) CAMIER))
-            (Q G8030)))))
+          (LAM G1652
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1652))) CAMIER))
+            (Q G1652)))))
         (LAM Q
-         (LAM G8032
+         (LAM G1654
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8032))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1654))) CAMIER))
              MERCIER))
-           (Q G8032)))))
+           (Q G1654)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8043 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8043)) CAMIER)
-       (Q G8043))
-      (\ Q . \ G8045 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8045)) CAMIER) MERCIER)
-       (Q G8045))
+      (\ Q . \ G1665 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1665)) CAMIER)
+       (Q G1665))
+      (\ Q . \ G1667 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1667)) CAMIER) MERCIER)
+       (Q G1667))
       (\ X . CEO X)))
 
 Derivation 32
@@ -10108,24 +10110,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8056
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8056))) CAMIER))
-            (Q G8056)))))
+          (LAM G1678
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1678))) CAMIER))
+            (Q G1678)))))
         (LAM Q
-         (LAM G8058
+         (LAM G1680
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8058))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1680))) CAMIER))
              MERCIER))
-           (Q G8058)))))
+           (Q G1680)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8069 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8069)) CAMIER)
-       (Q G8069))
-      (\ Q . \ G8071 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8071)) CAMIER) MERCIER)
-       (Q G8071))
+      (\ Q . \ G1691 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1691)) CAMIER)
+       (Q G1691))
+      (\ Q . \ G1693 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1693)) CAMIER) MERCIER)
+       (Q G1693))
       (\ X . CEO X)))
 
 Derivation 33
@@ -10289,24 +10291,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8082
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8082))) CAMIER))
-            (Q G8082)))))
+          (LAM G1704
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1704))) CAMIER))
+            (Q G1704)))))
         (LAM Q
-         (LAM G8084
+         (LAM G1706
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8084))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1706))) CAMIER))
              MERCIER))
-           (Q G8084)))))
+           (Q G1706)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8095 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8095)) CAMIER)
-       (Q G8095))
-      (\ Q . \ G8097 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8097)) CAMIER) MERCIER)
-       (Q G8097))
+      (\ Q . \ G1717 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1717)) CAMIER)
+       (Q G1717))
+      (\ Q . \ G1719 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1719)) CAMIER) MERCIER)
+       (Q G1719))
       (\ X . CEO X)))
 
 Derivation 34
@@ -10443,24 +10445,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8108
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8108))) CAMIER))
-            (Q G8108)))))
+          (LAM G1730
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1730))) CAMIER))
+            (Q G1730)))))
         (LAM Q
-         (LAM G8110
+         (LAM G1732
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8110))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1732))) CAMIER))
              MERCIER))
-           (Q G8110)))))
+           (Q G1732)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8121 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8121)) CAMIER)
-       (Q G8121))
-      (\ Q . \ G8123 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8123)) CAMIER) MERCIER)
-       (Q G8123))
+      (\ Q . \ G1743 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1743)) CAMIER)
+       (Q G1743))
+      (\ Q . \ G1745 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1745)) CAMIER) MERCIER)
+       (Q G1745))
       (\ X . CEO X)))
 
 Derivation 35
@@ -10618,24 +10620,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8134
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8134))) CAMIER))
-            (Q G8134)))))
+          (LAM G1756
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1756))) CAMIER))
+            (Q G1756)))))
         (LAM Q
-         (LAM G8136
+         (LAM G1758
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8136))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1758))) CAMIER))
              MERCIER))
-           (Q G8136)))))
+           (Q G1758)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8148 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8148)) CAMIER)
-       (Q G8148))
-      (\ Q . \ G8150 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8150)) CAMIER) MERCIER)
-       (Q G8150))
+      (\ Q . \ G1770 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1770)) CAMIER)
+       (Q G1770))
+      (\ Q . \ G1772 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1772)) CAMIER) MERCIER)
+       (Q G1772))
       (\ X . CEO X)))
 
 Derivation 36
@@ -10787,24 +10789,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8162
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8162))) CAMIER))
-            (Q G8162)))))
+          (LAM G1784
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1784))) CAMIER))
+            (Q G1784)))))
         (LAM Q
-         (LAM G8164
+         (LAM G1786
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8164))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1786))) CAMIER))
              MERCIER))
-           (Q G8164)))))
+           (Q G1786)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8176 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8176)) CAMIER)
-       (Q G8176))
-      (\ Q . \ G8178 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8178)) CAMIER) MERCIER)
-       (Q G8178))
+      (\ Q . \ G1798 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1798)) CAMIER)
+       (Q G1798))
+      (\ Q . \ G1800 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1800)) CAMIER) MERCIER)
+       (Q G1800))
       (\ X . CEO X)))
 
 Derivation 37
@@ -10955,20 +10957,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8191
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8191))) CAMIER))
-            (Q G8191)))))
+          (LAM G1813
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1813))) CAMIER))
+            (Q G1813)))))
         (LAM Q
-         (LAM G8194
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8194))) MERCIER))
-           (Q G8194)))))
+         (LAM G1816
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1816))) MERCIER))
+           (Q G1816)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8206 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8206)) CAMIER)
-       (Q G8206))
-      (\ Q . \ G8209 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8209)) MERCIER) (Q G8209))
+      (\ Q . \ G1828 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1828)) CAMIER)
+       (Q G1828))
+      (\ Q . \ G1831 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1831)) MERCIER) (Q G1831))
       (\ X . CEO X)))
 
 Derivation 38
@@ -11118,20 +11120,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8222
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8222))) CAMIER))
-            (Q G8222)))))
+          (LAM G1844
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1844))) CAMIER))
+            (Q G1844)))))
         (LAM Q
-         (LAM G8225
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8225))) MERCIER))
-           (Q G8225)))))
+         (LAM G1847
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1847))) MERCIER))
+           (Q G1847)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8238 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8238)) CAMIER)
-       (Q G8238))
-      (\ Q . \ G8241 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8241)) MERCIER) (Q G8241))
+      (\ Q . \ G1860 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1860)) CAMIER)
+       (Q G1860))
+      (\ Q . \ G1863 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1863)) MERCIER) (Q G1863))
       (\ X . CEO X)))
 
 Derivation 39
@@ -11279,20 +11281,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8253
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8253))) CAMIER))
-            (Q G8253)))))
+          (LAM G1875
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1875))) CAMIER))
+            (Q G1875)))))
         (LAM Q
-         (LAM G8256
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8256))) MERCIER))
-           (Q G8256)))))
+         (LAM G1878
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1878))) MERCIER))
+           (Q G1878)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8268 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8268)) CAMIER)
-       (Q G8268))
-      (\ Q . \ G8271 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8271)) MERCIER) (Q G8271))
+      (\ Q . \ G1890 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1890)) CAMIER)
+       (Q G1890))
+      (\ Q . \ G1893 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1893)) MERCIER) (Q G1893))
       (\ X . CEO X)))
 
 Derivation 40
@@ -11439,20 +11441,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8284
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8284))) CAMIER))
-            (Q G8284)))))
+          (LAM G1906
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1906))) CAMIER))
+            (Q G1906)))))
         (LAM Q
-         (LAM G8287
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8287))) MERCIER))
-           (Q G8287)))))
+         (LAM G1909
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G1909))) MERCIER))
+           (Q G1909)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8300 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8300)) CAMIER)
-       (Q G8300))
-      (\ Q . \ G8303 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8303)) MERCIER) (Q G8303))
+      (\ Q . \ G1922 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1922)) CAMIER)
+       (Q G1922))
+      (\ Q . \ G1925 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G1925)) MERCIER) (Q G1925))
       (\ X . CEO X)))
 
 Derivation 41
@@ -11602,24 +11604,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8314
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8314))) CAMIER))
-            (Q G8314)))))
+          (LAM G1936
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1936))) CAMIER))
+            (Q G1936)))))
         (LAM Q
-         (LAM G8317
+         (LAM G1939
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8317))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1939))) CAMIER))
              MERCIER))
-           (Q G8317)))))
+           (Q G1939)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8328 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8328)) CAMIER)
-       (Q G8328))
-      (\ Q . \ G8331 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8331)) CAMIER) MERCIER)
-       (Q G8331))
+      (\ Q . \ G1950 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1950)) CAMIER)
+       (Q G1950))
+      (\ Q . \ G1953 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1953)) CAMIER) MERCIER)
+       (Q G1953))
       (\ X . CEO X)))
 
 Derivation 42
@@ -11763,24 +11765,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8342
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8342))) CAMIER))
-            (Q G8342)))))
+          (LAM G1964
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1964))) CAMIER))
+            (Q G1964)))))
         (LAM Q
-         (LAM G8345
+         (LAM G1967
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8345))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1967))) CAMIER))
              MERCIER))
-           (Q G8345)))))
+           (Q G1967)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8356 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8356)) CAMIER)
-       (Q G8356))
-      (\ Q . \ G8359 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8359)) CAMIER) MERCIER)
-       (Q G8359))
+      (\ Q . \ G1978 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1978)) CAMIER)
+       (Q G1978))
+      (\ Q . \ G1981 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G1981)) CAMIER) MERCIER)
+       (Q G1981))
       (\ X . CEO X)))
 
 Derivation 43
@@ -11940,24 +11942,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8370
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8370))) CAMIER))
-            (Q G8370)))))
+          (LAM G1992
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1992))) CAMIER))
+            (Q G1992)))))
         (LAM Q
-         (LAM G8373
+         (LAM G1995
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8373))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G1995))) CAMIER))
              MERCIER))
-           (Q G8373)))))
+           (Q G1995)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8384 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8384)) CAMIER)
-       (Q G8384))
-      (\ Q . \ G8387 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8387)) CAMIER) MERCIER)
-       (Q G8387))
+      (\ Q . \ G2006 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2006)) CAMIER)
+       (Q G2006))
+      (\ Q . \ G2009 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2009)) CAMIER) MERCIER)
+       (Q G2009))
       (\ X . CEO X)))
 
 Derivation 44
@@ -12108,24 +12110,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8398
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8398))) CAMIER))
-            (Q G8398)))))
+          (LAM G2020
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2020))) CAMIER))
+            (Q G2020)))))
         (LAM Q
-         (LAM G8401
+         (LAM G2023
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8401))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2023))) CAMIER))
              MERCIER))
-           (Q G8401)))))
+           (Q G2023)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8412 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8412)) CAMIER)
-       (Q G8412))
-      (\ Q . \ G8415 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8415)) CAMIER) MERCIER)
-       (Q G8415))
+      (\ Q . \ G2034 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2034)) CAMIER)
+       (Q G2034))
+      (\ Q . \ G2037 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2037)) CAMIER) MERCIER)
+       (Q G2037))
       (\ X . CEO X)))
 
 Derivation 45
@@ -12303,24 +12305,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8426
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8426))) CAMIER))
-            (Q G8426)))))
+          (LAM G2048
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2048))) CAMIER))
+            (Q G2048)))))
         (LAM Q
-         (LAM G8428
+         (LAM G2050
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8428))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2050))) CAMIER))
              MERCIER))
-           (Q G8428)))))
+           (Q G2050)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8440 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8440)) CAMIER)
-       (Q G8440))
-      (\ Q . \ G8442 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8442)) CAMIER) MERCIER)
-       (Q G8442))
+      (\ Q . \ G2062 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2062)) CAMIER)
+       (Q G2062))
+      (\ Q . \ G2064 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2064)) CAMIER) MERCIER)
+       (Q G2064))
       (\ X . CEO X)))
 
 Derivation 46
@@ -12468,24 +12470,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8454
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8454))) CAMIER))
-            (Q G8454)))))
+          (LAM G2076
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2076))) CAMIER))
+            (Q G2076)))))
         (LAM Q
-         (LAM G8456
+         (LAM G2078
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8456))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2078))) CAMIER))
              MERCIER))
-           (Q G8456)))))
+           (Q G2078)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8468 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8468)) CAMIER)
-       (Q G8468))
-      (\ Q . \ G8470 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8470)) CAMIER) MERCIER)
-       (Q G8470))
+      (\ Q . \ G2090 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2090)) CAMIER)
+       (Q G2090))
+      (\ Q . \ G2092 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2092)) CAMIER) MERCIER)
+       (Q G2092))
       (\ X . CEO X)))
 
 Derivation 47
@@ -12640,20 +12642,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8483
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8483))) CAMIER))
-            (Q G8483)))))
+          (LAM G2105
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2105))) CAMIER))
+            (Q G2105)))))
         (LAM Q
-         (LAM G8486
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8486))) MERCIER))
-           (Q G8486)))))
+         (LAM G2108
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2108))) MERCIER))
+           (Q G2108)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8499 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8499)) CAMIER)
-       (Q G8499))
-      (\ Q . \ G8502 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8502)) MERCIER) (Q G8502))
+      (\ Q . \ G2121 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2121)) CAMIER)
+       (Q G2121))
+      (\ Q . \ G2124 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2124)) MERCIER) (Q G2124))
       (\ X . CEO X)))
 
 Derivation 48
@@ -12805,20 +12807,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8516
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8516))) CAMIER))
-            (Q G8516)))))
+          (LAM G2138
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2138))) CAMIER))
+            (Q G2138)))))
         (LAM Q
-         (LAM G8519
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8519))) MERCIER))
-           (Q G8519)))))
+         (LAM G2141
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2141))) MERCIER))
+           (Q G2141)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8533 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8533)) CAMIER)
-       (Q G8533))
-      (\ Q . \ G8536 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8536)) MERCIER) (Q G8536))
+      (\ Q . \ G2155 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2155)) CAMIER)
+       (Q G2155))
+      (\ Q . \ G2158 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2158)) MERCIER) (Q G2158))
       (\ X . CEO X)))
 
 Derivation 49
@@ -12995,24 +12997,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8548
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8548))) CAMIER))
-            (Q G8548)))))
+          (LAM G2170
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2170))) CAMIER))
+            (Q G2170)))))
         (LAM Q
-         (LAM G8550
+         (LAM G2172
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8550))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2172))) CAMIER))
              MERCIER))
-           (Q G8550)))))
+           (Q G2172)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8562 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8562)) CAMIER)
-       (Q G8562))
-      (\ Q . \ G8564 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8564)) CAMIER) MERCIER)
-       (Q G8564))
+      (\ Q . \ G2184 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2184)) CAMIER)
+       (Q G2184))
+      (\ Q . \ G2186 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2186)) CAMIER) MERCIER)
+       (Q G2186))
       (\ X . CEO X)))
 
 Derivation 50
@@ -13159,24 +13161,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8576
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8576))) CAMIER))
-            (Q G8576)))))
+          (LAM G2198
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2198))) CAMIER))
+            (Q G2198)))))
         (LAM Q
-         (LAM G8578
+         (LAM G2200
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8578))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2200))) CAMIER))
              MERCIER))
-           (Q G8578)))))
+           (Q G2200)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8590 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8590)) CAMIER)
-       (Q G8590))
-      (\ Q . \ G8592 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8592)) CAMIER) MERCIER)
-       (Q G8592))
+      (\ Q . \ G2212 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2212)) CAMIER)
+       (Q G2212))
+      (\ Q . \ G2214 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2214)) CAMIER) MERCIER)
+       (Q G2214))
       (\ X . CEO X)))
 
 Derivation 51
@@ -13330,20 +13332,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8605
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8605))) CAMIER))
-            (Q G8605)))))
+          (LAM G2227
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2227))) CAMIER))
+            (Q G2227)))))
         (LAM Q
-         (LAM G8608
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8608))) MERCIER))
-           (Q G8608)))))
+         (LAM G2230
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2230))) MERCIER))
+           (Q G2230)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8621 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8621)) CAMIER)
-       (Q G8621))
-      (\ Q . \ G8624 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8624)) MERCIER) (Q G8624))
+      (\ Q . \ G2243 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2243)) CAMIER)
+       (Q G2243))
+      (\ Q . \ G2246 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2246)) MERCIER) (Q G2246))
       (\ X . CEO X)))
 
 Derivation 52
@@ -13494,20 +13496,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8638
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8638))) CAMIER))
-            (Q G8638)))))
+          (LAM G2260
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2260))) CAMIER))
+            (Q G2260)))))
         (LAM Q
-         (LAM G8641
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G8641))) MERCIER))
-           (Q G8641)))))
+         (LAM G2263
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2263))) MERCIER))
+           (Q G2263)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8655 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8655)) CAMIER)
-       (Q G8655))
-      (\ Q . \ G8658 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G8658)) MERCIER) (Q G8658))
+      (\ Q . \ G2277 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2277)) CAMIER)
+       (Q G2277))
+      (\ Q . \ G2280 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2280)) MERCIER) (Q G2280))
       (\ X . CEO X)))
 
 Derivation 53
@@ -13648,24 +13650,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8670
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8670))) CAMIER))
-            (Q G8670)))))
+          (LAM G2292
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2292))) CAMIER))
+            (Q G2292)))))
         (LAM Q
-         (LAM G8673
+         (LAM G2295
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8673))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2295))) CAMIER))
              MERCIER))
-           (Q G8673)))))
+           (Q G2295)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8684 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8684)) CAMIER)
-       (Q G8684))
-      (\ Q . \ G8687 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8687)) CAMIER) MERCIER)
-       (Q G8687))
+      (\ Q . \ G2306 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2306)) CAMIER)
+       (Q G2306))
+      (\ Q . \ G2309 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2309)) CAMIER) MERCIER)
+       (Q G2309))
       (\ X . CEO X)))
 
 Derivation 54
@@ -13807,24 +13809,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8698
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8698))) CAMIER))
-            (Q G8698)))))
+          (LAM G2320
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2320))) CAMIER))
+            (Q G2320)))))
         (LAM Q
-         (LAM G8700
+         (LAM G2322
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8700))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2322))) CAMIER))
              MERCIER))
-           (Q G8700)))))
+           (Q G2322)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8712 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8712)) CAMIER)
-       (Q G8712))
-      (\ Q . \ G8714 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8714)) CAMIER) MERCIER)
-       (Q G8714))
+      (\ Q . \ G2334 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2334)) CAMIER)
+       (Q G2334))
+      (\ Q . \ G2336 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2336)) CAMIER) MERCIER)
+       (Q G2336))
       (\ X . CEO X)))
 
 Derivation 55
@@ -13948,24 +13950,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8726
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8726))) CAMIER))
-            (Q G8726)))))
+          (LAM G2348
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2348))) CAMIER))
+            (Q G2348)))))
         (LAM Q
-         (LAM G8729
+         (LAM G2351
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8729))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2351))) CAMIER))
              MERCIER))
-           (Q G8729)))))
+           (Q G2351)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8740 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8740)) CAMIER)
-       (Q G8740))
-      (\ Q . \ G8743 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8743)) CAMIER) MERCIER)
-       (Q G8743))
+      (\ Q . \ G2362 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2362)) CAMIER)
+       (Q G2362))
+      (\ Q . \ G2365 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2365)) CAMIER) MERCIER)
+       (Q G2365))
       (\ X . CEO X)))
 
 Derivation 56
@@ -14118,24 +14120,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8754
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8754))) CAMIER))
-            (Q G8754)))))
+          (LAM G2376
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2376))) CAMIER))
+            (Q G2376)))))
         (LAM Q
-         (LAM G8756
+         (LAM G2378
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8756))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2378))) CAMIER))
              MERCIER))
-           (Q G8756)))))
+           (Q G2378)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8767 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8767)) CAMIER)
-       (Q G8767))
-      (\ Q . \ G8769 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8769)) CAMIER) MERCIER)
-       (Q G8769))
+      (\ Q . \ G2389 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2389)) CAMIER)
+       (Q G2389))
+      (\ Q . \ G2391 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2391)) CAMIER) MERCIER)
+       (Q G2391))
       (\ X . CEO X)))
 
 Derivation 57
@@ -14260,24 +14262,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8780
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8780))) CAMIER))
-            (Q G8780)))))
+          (LAM G2402
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2402))) CAMIER))
+            (Q G2402)))))
         (LAM Q
-         (LAM G8782
+         (LAM G2404
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8782))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2404))) CAMIER))
              MERCIER))
-           (Q G8782)))))
+           (Q G2404)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8793 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8793)) CAMIER)
-       (Q G8793))
-      (\ Q . \ G8795 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8795)) CAMIER) MERCIER)
-       (Q G8795))
+      (\ Q . \ G2415 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2415)) CAMIER)
+       (Q G2415))
+      (\ Q . \ G2417 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2417)) CAMIER) MERCIER)
+       (Q G2417))
       (\ X . CEO X)))
 
 Derivation 58
@@ -14416,24 +14418,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8806
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8806))) CAMIER))
-            (Q G8806)))))
+          (LAM G2428
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2428))) CAMIER))
+            (Q G2428)))))
         (LAM Q
-         (LAM G8809
+         (LAM G2431
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8809))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2431))) CAMIER))
              MERCIER))
-           (Q G8809)))))
+           (Q G2431)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8820 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8820)) CAMIER)
-       (Q G8820))
-      (\ Q . \ G8823 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8823)) CAMIER) MERCIER)
-       (Q G8823))
+      (\ Q . \ G2442 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2442)) CAMIER)
+       (Q G2442))
+      (\ Q . \ G2445 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2445)) CAMIER) MERCIER)
+       (Q G2445))
       (\ X . CEO X)))
 
 Derivation 59
@@ -14573,24 +14575,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8834
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8834))) CAMIER))
-            (Q G8834)))))
+          (LAM G2456
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2456))) CAMIER))
+            (Q G2456)))))
         (LAM Q
-         (LAM G8836
+         (LAM G2458
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8836))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2458))) CAMIER))
              MERCIER))
-           (Q G8836)))))
+           (Q G2458)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8848 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8848)) CAMIER)
-       (Q G8848))
-      (\ Q . \ G8850 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8850)) CAMIER) MERCIER)
-       (Q G8850))
+      (\ Q . \ G2470 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2470)) CAMIER)
+       (Q G2470))
+      (\ Q . \ G2472 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2472)) CAMIER) MERCIER)
+       (Q G2472))
       (\ X . CEO X)))
 
 Derivation 60
@@ -14712,24 +14714,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8862
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8862))) CAMIER))
-            (Q G8862)))))
+          (LAM G2484
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2484))) CAMIER))
+            (Q G2484)))))
         (LAM Q
-         (LAM G8865
+         (LAM G2487
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8865))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2487))) CAMIER))
              MERCIER))
-           (Q G8865)))))
+           (Q G2487)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8876 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8876)) CAMIER)
-       (Q G8876))
-      (\ Q . \ G8879 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8879)) CAMIER) MERCIER)
-       (Q G8879))
+      (\ Q . \ G2498 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2498)) CAMIER)
+       (Q G2498))
+      (\ Q . \ G2501 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2501)) CAMIER) MERCIER)
+       (Q G2501))
       (\ X . CEO X)))
 
 Derivation 61
@@ -14880,24 +14882,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8890
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8890))) CAMIER))
-            (Q G8890)))))
+          (LAM G2512
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2512))) CAMIER))
+            (Q G2512)))))
         (LAM Q
-         (LAM G8892
+         (LAM G2514
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8892))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2514))) CAMIER))
              MERCIER))
-           (Q G8892)))))
+           (Q G2514)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8903 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8903)) CAMIER)
-       (Q G8903))
-      (\ Q . \ G8905 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8905)) CAMIER) MERCIER)
-       (Q G8905))
+      (\ Q . \ G2525 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2525)) CAMIER)
+       (Q G2525))
+      (\ Q . \ G2527 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2527)) CAMIER) MERCIER)
+       (Q G2527))
       (\ X . CEO X)))
 
 Derivation 62
@@ -15020,24 +15022,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8916
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8916))) CAMIER))
-            (Q G8916)))))
+          (LAM G2538
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2538))) CAMIER))
+            (Q G2538)))))
         (LAM Q
-         (LAM G8918
+         (LAM G2540
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8918))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2540))) CAMIER))
              MERCIER))
-           (Q G8918)))))
+           (Q G2540)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8929 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8929)) CAMIER)
-       (Q G8929))
-      (\ Q . \ G8931 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8931)) CAMIER) MERCIER)
-       (Q G8931))
+      (\ Q . \ G2551 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2551)) CAMIER)
+       (Q G2551))
+      (\ Q . \ G2553 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2553)) CAMIER) MERCIER)
+       (Q G2553))
       (\ X . CEO X)))
 
 Derivation 63
@@ -15176,24 +15178,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8942
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8942))) CAMIER))
-            (Q G8942)))))
+          (LAM G2564
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2564))) CAMIER))
+            (Q G2564)))))
         (LAM Q
-         (LAM G8945
+         (LAM G2567
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8945))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2567))) CAMIER))
              MERCIER))
-           (Q G8945)))))
+           (Q G2567)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8956 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8956)) CAMIER)
-       (Q G8956))
-      (\ Q . \ G8959 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8959)) CAMIER) MERCIER)
-       (Q G8959))
+      (\ Q . \ G2578 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2578)) CAMIER)
+       (Q G2578))
+      (\ Q . \ G2581 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2581)) CAMIER) MERCIER)
+       (Q G2581))
       (\ X . CEO X)))
 
 Derivation 64
@@ -15333,24 +15335,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8970
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8970))) CAMIER))
-            (Q G8970)))))
+          (LAM G2592
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2592))) CAMIER))
+            (Q G2592)))))
         (LAM Q
-         (LAM G8972
+         (LAM G2594
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8972))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2594))) CAMIER))
              MERCIER))
-           (Q G8972)))))
+           (Q G2594)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G8984 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8984)) CAMIER)
-       (Q G8984))
-      (\ Q . \ G8986 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G8986)) CAMIER) MERCIER)
-       (Q G8986))
+      (\ Q . \ G2606 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2606)) CAMIER)
+       (Q G2606))
+      (\ Q . \ G2608 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2608)) CAMIER) MERCIER)
+       (Q G2608))
       (\ X . CEO X)))
 
 Derivation 65
@@ -15486,24 +15488,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G8998
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G8998))) CAMIER))
-            (Q G8998)))))
+          (LAM G2620
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2620))) CAMIER))
+            (Q G2620)))))
         (LAM Q
-         (LAM G9001
+         (LAM G2623
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9001))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2623))) CAMIER))
              MERCIER))
-           (Q G9001)))))
+           (Q G2623)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9012 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9012)) CAMIER)
-       (Q G9012))
-      (\ Q . \ G9015 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9015)) CAMIER) MERCIER)
-       (Q G9015))
+      (\ Q . \ G2634 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2634)) CAMIER)
+       (Q G2634))
+      (\ Q . \ G2637 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2637)) CAMIER) MERCIER)
+       (Q G2637))
       (\ X . CEO X)))
 
 Derivation 66
@@ -15640,24 +15642,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9026
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9026))) CAMIER))
-            (Q G9026)))))
+          (LAM G2648
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2648))) CAMIER))
+            (Q G2648)))))
         (LAM Q
-         (LAM G9028
+         (LAM G2650
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9028))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2650))) CAMIER))
              MERCIER))
-           (Q G9028)))))
+           (Q G2650)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9040 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9040)) CAMIER)
-       (Q G9040))
-      (\ Q . \ G9042 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9042)) CAMIER) MERCIER)
-       (Q G9042))
+      (\ Q . \ G2662 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2662)) CAMIER)
+       (Q G2662))
+      (\ Q . \ G2664 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2664)) CAMIER) MERCIER)
+       (Q G2664))
       (\ X . CEO X)))
 
 Derivation 67
@@ -15792,20 +15794,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9055
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9055))) CAMIER))
-            (Q G9055)))))
+          (LAM G2677
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2677))) CAMIER))
+            (Q G2677)))))
         (LAM Q
-         (LAM G9058
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9058))) MERCIER))
-           (Q G9058)))))
+         (LAM G2680
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2680))) MERCIER))
+           (Q G2680)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9070 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9070)) CAMIER)
-       (Q G9070))
-      (\ Q . \ G9073 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9073)) MERCIER) (Q G9073))
+      (\ Q . \ G2692 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2692)) CAMIER)
+       (Q G2692))
+      (\ Q . \ G2695 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2695)) MERCIER) (Q G2695))
       (\ X . CEO X)))
 
 Derivation 68
@@ -15941,20 +15943,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9086
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9086))) CAMIER))
-            (Q G9086)))))
+          (LAM G2708
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2708))) CAMIER))
+            (Q G2708)))))
         (LAM Q
-         (LAM G9089
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9089))) MERCIER))
-           (Q G9089)))))
+         (LAM G2711
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2711))) MERCIER))
+           (Q G2711)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9102 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9102)) CAMIER)
-       (Q G9102))
-      (\ Q . \ G9105 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9105)) MERCIER) (Q G9105))
+      (\ Q . \ G2724 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2724)) CAMIER)
+       (Q G2724))
+      (\ Q . \ G2727 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2727)) MERCIER) (Q G2727))
       (\ X . CEO X)))
 
 Derivation 69
@@ -16087,20 +16089,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9117
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9117))) CAMIER))
-            (Q G9117)))))
+          (LAM G2739
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2739))) CAMIER))
+            (Q G2739)))))
         (LAM Q
-         (LAM G9120
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9120))) MERCIER))
-           (Q G9120)))))
+         (LAM G2742
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2742))) MERCIER))
+           (Q G2742)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9132 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9132)) CAMIER)
-       (Q G9132))
-      (\ Q . \ G9135 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9135)) MERCIER) (Q G9135))
+      (\ Q . \ G2754 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2754)) CAMIER)
+       (Q G2754))
+      (\ Q . \ G2757 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2757)) MERCIER) (Q G2757))
       (\ X . CEO X)))
 
 Derivation 70
@@ -16234,20 +16236,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9148
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9148))) CAMIER))
-            (Q G9148)))))
+          (LAM G2770
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2770))) CAMIER))
+            (Q G2770)))))
         (LAM Q
-         (LAM G9151
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9151))) MERCIER))
-           (Q G9151)))))
+         (LAM G2773
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G2773))) MERCIER))
+           (Q G2773)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9164 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9164)) CAMIER)
-       (Q G9164))
-      (\ Q . \ G9167 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9167)) MERCIER) (Q G9167))
+      (\ Q . \ G2786 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2786)) CAMIER)
+       (Q G2786))
+      (\ Q . \ G2789 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G2789)) MERCIER) (Q G2789))
       (\ X . CEO X)))
 
 Derivation 71
@@ -16380,24 +16382,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9178
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9178))) CAMIER))
-            (Q G9178)))))
+          (LAM G2800
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2800))) CAMIER))
+            (Q G2800)))))
         (LAM Q
-         (LAM G9181
+         (LAM G2803
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9181))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2803))) CAMIER))
              MERCIER))
-           (Q G9181)))))
+           (Q G2803)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9192 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9192)) CAMIER)
-       (Q G9192))
-      (\ Q . \ G9195 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9195)) CAMIER) MERCIER)
-       (Q G9195))
+      (\ Q . \ G2814 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2814)) CAMIER)
+       (Q G2814))
+      (\ Q . \ G2817 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2817)) CAMIER) MERCIER)
+       (Q G2817))
       (\ X . CEO X)))
 
 Derivation 72
@@ -16527,24 +16529,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9206
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9206))) CAMIER))
-            (Q G9206)))))
+          (LAM G2828
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2828))) CAMIER))
+            (Q G2828)))))
         (LAM Q
-         (LAM G9209
+         (LAM G2831
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9209))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2831))) CAMIER))
              MERCIER))
-           (Q G9209)))))
+           (Q G2831)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9220 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9220)) CAMIER)
-       (Q G9220))
-      (\ Q . \ G9223 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9223)) CAMIER) MERCIER)
-       (Q G9223))
+      (\ Q . \ G2842 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2842)) CAMIER)
+       (Q G2842))
+      (\ Q . \ G2845 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2845)) CAMIER) MERCIER)
+       (Q G2845))
       (\ X . CEO X)))
 
 Derivation 73
@@ -16688,24 +16690,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9234
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9234))) CAMIER))
-            (Q G9234)))))
+          (LAM G2856
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2856))) CAMIER))
+            (Q G2856)))))
         (LAM Q
-         (LAM G9237
+         (LAM G2859
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9237))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2859))) CAMIER))
              MERCIER))
-           (Q G9237)))))
+           (Q G2859)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9248 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9248)) CAMIER)
-       (Q G9248))
-      (\ Q . \ G9251 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9251)) CAMIER) MERCIER)
-       (Q G9251))
+      (\ Q . \ G2870 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2870)) CAMIER)
+       (Q G2870))
+      (\ Q . \ G2873 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2873)) CAMIER) MERCIER)
+       (Q G2873))
       (\ X . CEO X)))
 
 Derivation 74
@@ -16843,24 +16845,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9262
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9262))) CAMIER))
-            (Q G9262)))))
+          (LAM G2884
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2884))) CAMIER))
+            (Q G2884)))))
         (LAM Q
-         (LAM G9265
+         (LAM G2887
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9265))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2887))) CAMIER))
              MERCIER))
-           (Q G9265)))))
+           (Q G2887)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9276 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9276)) CAMIER)
-       (Q G9276))
-      (\ Q . \ G9279 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9279)) CAMIER) MERCIER)
-       (Q G9279))
+      (\ Q . \ G2898 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2898)) CAMIER)
+       (Q G2898))
+      (\ Q . \ G2901 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2901)) CAMIER) MERCIER)
+       (Q G2901))
       (\ X . CEO X)))
 
 Derivation 75
@@ -17027,24 +17029,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9290
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9290))) CAMIER))
-            (Q G9290)))))
+          (LAM G2912
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2912))) CAMIER))
+            (Q G2912)))))
         (LAM Q
-         (LAM G9292
+         (LAM G2914
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9292))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2914))) CAMIER))
              MERCIER))
-           (Q G9292)))))
+           (Q G2914)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9303 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9303)) CAMIER)
-       (Q G9303))
-      (\ Q . \ G9305 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9305)) CAMIER) MERCIER)
-       (Q G9305))
+      (\ Q . \ G2925 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2925)) CAMIER)
+       (Q G2925))
+      (\ Q . \ G2927 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2927)) CAMIER) MERCIER)
+       (Q G2927))
       (\ X . CEO X)))
 
 Derivation 76
@@ -17184,24 +17186,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9316
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9316))) CAMIER))
-            (Q G9316)))))
+          (LAM G2938
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2938))) CAMIER))
+            (Q G2938)))))
         (LAM Q
-         (LAM G9318
+         (LAM G2940
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9318))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2940))) CAMIER))
              MERCIER))
-           (Q G9318)))))
+           (Q G2940)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9329 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9329)) CAMIER)
-       (Q G9329))
-      (\ Q . \ G9331 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9331)) CAMIER) MERCIER)
-       (Q G9331))
+      (\ Q . \ G2951 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2951)) CAMIER)
+       (Q G2951))
+      (\ Q . \ G2953 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2953)) CAMIER) MERCIER)
+       (Q G2953))
       (\ X . CEO X)))
 
 Derivation 77
@@ -17365,24 +17367,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9342
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9342))) CAMIER))
-            (Q G9342)))))
+          (LAM G2964
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2964))) CAMIER))
+            (Q G2964)))))
         (LAM Q
-         (LAM G9344
+         (LAM G2966
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9344))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2966))) CAMIER))
              MERCIER))
-           (Q G9344)))))
+           (Q G2966)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9355 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9355)) CAMIER)
-       (Q G9355))
-      (\ Q . \ G9357 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9357)) CAMIER) MERCIER)
-       (Q G9357))
+      (\ Q . \ G2977 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2977)) CAMIER)
+       (Q G2977))
+      (\ Q . \ G2979 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G2979)) CAMIER) MERCIER)
+       (Q G2979))
       (\ X . CEO X)))
 
 Derivation 78
@@ -17519,24 +17521,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9368
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9368))) CAMIER))
-            (Q G9368)))))
+          (LAM G2990
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2990))) CAMIER))
+            (Q G2990)))))
         (LAM Q
-         (LAM G9370
+         (LAM G2992
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9370))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G2992))) CAMIER))
              MERCIER))
-           (Q G9370)))))
+           (Q G2992)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9381 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9381)) CAMIER)
-       (Q G9381))
-      (\ Q . \ G9383 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9383)) CAMIER) MERCIER)
-       (Q G9383))
+      (\ Q . \ G3003 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3003)) CAMIER)
+       (Q G3003))
+      (\ Q . \ G3005 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3005)) CAMIER) MERCIER)
+       (Q G3005))
       (\ X . CEO X)))
 
 Derivation 79
@@ -17694,24 +17696,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9394
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9394))) CAMIER))
-            (Q G9394)))))
+          (LAM G3016
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3016))) CAMIER))
+            (Q G3016)))))
         (LAM Q
-         (LAM G9396
+         (LAM G3018
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9396))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3018))) CAMIER))
              MERCIER))
-           (Q G9396)))))
+           (Q G3018)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9408 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9408)) CAMIER)
-       (Q G9408))
-      (\ Q . \ G9410 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9410)) CAMIER) MERCIER)
-       (Q G9410))
+      (\ Q . \ G3030 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3030)) CAMIER)
+       (Q G3030))
+      (\ Q . \ G3032 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3032)) CAMIER) MERCIER)
+       (Q G3032))
       (\ X . CEO X)))
 
 Derivation 80
@@ -17863,24 +17865,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9422
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9422))) CAMIER))
-            (Q G9422)))))
+          (LAM G3044
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3044))) CAMIER))
+            (Q G3044)))))
         (LAM Q
-         (LAM G9424
+         (LAM G3046
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9424))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3046))) CAMIER))
              MERCIER))
-           (Q G9424)))))
+           (Q G3046)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9436 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9436)) CAMIER)
-       (Q G9436))
-      (\ Q . \ G9438 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9438)) CAMIER) MERCIER)
-       (Q G9438))
+      (\ Q . \ G3058 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3058)) CAMIER)
+       (Q G3058))
+      (\ Q . \ G3060 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3060)) CAMIER) MERCIER)
+       (Q G3060))
       (\ X . CEO X)))
 
 Derivation 81
@@ -18031,20 +18033,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9451
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9451))) CAMIER))
-            (Q G9451)))))
+          (LAM G3073
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3073))) CAMIER))
+            (Q G3073)))))
         (LAM Q
-         (LAM G9454
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9454))) MERCIER))
-           (Q G9454)))))
+         (LAM G3076
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G3076))) MERCIER))
+           (Q G3076)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9466 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9466)) CAMIER)
-       (Q G9466))
-      (\ Q . \ G9469 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9469)) MERCIER) (Q G9469))
+      (\ Q . \ G3088 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3088)) CAMIER)
+       (Q G3088))
+      (\ Q . \ G3091 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G3091)) MERCIER) (Q G3091))
       (\ X . CEO X)))
 
 Derivation 82
@@ -18194,20 +18196,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9482
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9482))) CAMIER))
-            (Q G9482)))))
+          (LAM G3104
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3104))) CAMIER))
+            (Q G3104)))))
         (LAM Q
-         (LAM G9485
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9485))) MERCIER))
-           (Q G9485)))))
+         (LAM G3107
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G3107))) MERCIER))
+           (Q G3107)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9498 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9498)) CAMIER)
-       (Q G9498))
-      (\ Q . \ G9501 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9501)) MERCIER) (Q G9501))
+      (\ Q . \ G3120 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3120)) CAMIER)
+       (Q G3120))
+      (\ Q . \ G3123 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G3123)) MERCIER) (Q G3123))
       (\ X . CEO X)))
 
 Derivation 83
@@ -18355,20 +18357,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9513
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9513))) CAMIER))
-            (Q G9513)))))
+          (LAM G3135
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3135))) CAMIER))
+            (Q G3135)))))
         (LAM Q
-         (LAM G9516
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9516))) MERCIER))
-           (Q G9516)))))
+         (LAM G3138
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G3138))) MERCIER))
+           (Q G3138)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9528 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9528)) CAMIER)
-       (Q G9528))
-      (\ Q . \ G9531 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9531)) MERCIER) (Q G9531))
+      (\ Q . \ G3150 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3150)) CAMIER)
+       (Q G3150))
+      (\ Q . \ G3153 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G3153)) MERCIER) (Q G3153))
       (\ X . CEO X)))
 
 Derivation 84
@@ -18515,20 +18517,20 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9544
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9544))) CAMIER))
-            (Q G9544)))))
+          (LAM G3166
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3166))) CAMIER))
+            (Q G3166)))))
         (LAM Q
-         (LAM G9547
-          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G9547))) MERCIER))
-           (Q G9547)))))
+         (LAM G3169
+          ((AND ((BELIEVE (MIGHT ((SAVE (LAM X (COMPANY X))) G3169))) MERCIER))
+           (Q G3169)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9560 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9560)) CAMIER)
-       (Q G9560))
-      (\ Q . \ G9563 . AND
-       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G9563)) MERCIER) (Q G9563))
+      (\ Q . \ G3182 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3182)) CAMIER)
+       (Q G3182))
+      (\ Q . \ G3185 . AND
+       (BELIEVE (MIGHT (SAVE (\ X . COMPANY X) G3185)) MERCIER) (Q G3185))
       (\ X . CEO X)))
 
 Derivation 85
@@ -18678,24 +18680,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9574
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9574))) CAMIER))
-            (Q G9574)))))
+          (LAM G3196
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3196))) CAMIER))
+            (Q G3196)))))
         (LAM Q
-         (LAM G9577
+         (LAM G3199
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9577))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3199))) CAMIER))
              MERCIER))
-           (Q G9577)))))
+           (Q G3199)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9588 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9588)) CAMIER)
-       (Q G9588))
-      (\ Q . \ G9591 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9591)) CAMIER) MERCIER)
-       (Q G9591))
+      (\ Q . \ G3210 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3210)) CAMIER)
+       (Q G3210))
+      (\ Q . \ G3213 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3213)) CAMIER) MERCIER)
+       (Q G3213))
       (\ X . CEO X)))
 
 Derivation 86
@@ -18839,24 +18841,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9602
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9602))) CAMIER))
-            (Q G9602)))))
+          (LAM G3224
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3224))) CAMIER))
+            (Q G3224)))))
         (LAM Q
-         (LAM G9605
+         (LAM G3227
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9605))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3227))) CAMIER))
              MERCIER))
-           (Q G9605)))))
+           (Q G3227)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9616 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9616)) CAMIER)
-       (Q G9616))
-      (\ Q . \ G9619 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9619)) CAMIER) MERCIER)
-       (Q G9619))
+      (\ Q . \ G3238 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3238)) CAMIER)
+       (Q G3238))
+      (\ Q . \ G3241 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3241)) CAMIER) MERCIER)
+       (Q G3241))
       (\ X . CEO X)))
 
 Derivation 87
@@ -19016,24 +19018,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9630
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9630))) CAMIER))
-            (Q G9630)))))
+          (LAM G3252
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3252))) CAMIER))
+            (Q G3252)))))
         (LAM Q
-         (LAM G9633
+         (LAM G3255
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9633))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3255))) CAMIER))
              MERCIER))
-           (Q G9633)))))
+           (Q G3255)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9644 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9644)) CAMIER)
-       (Q G9644))
-      (\ Q . \ G9647 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9647)) CAMIER) MERCIER)
-       (Q G9647))
+      (\ Q . \ G3266 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3266)) CAMIER)
+       (Q G3266))
+      (\ Q . \ G3269 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3269)) CAMIER) MERCIER)
+       (Q G3269))
       (\ X . CEO X)))
 
 Derivation 88
@@ -19184,24 +19186,24 @@ Final LF, normal-order evaluated:
      (P
       (((AND
          (LAM Q
-          (LAM G9658
-           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9658))) CAMIER))
-            (Q G9658)))))
+          (LAM G3280
+           ((AND ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3280))) CAMIER))
+            (Q G3280)))))
         (LAM Q
-         (LAM G9661
+         (LAM G3283
           ((AND
             ((BELIEVE
-              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G9661))) CAMIER))
+              ((HOPE (MIGHT ((SAVE (LAM X (COMPANY X))) G3283))) CAMIER))
              MERCIER))
-           (Q G9661)))))
+           (Q G3283)))))
        (LAM X (CEO X))))) =
     (\ P . P
      (AND
-      (\ Q . \ G9672 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9672)) CAMIER)
-       (Q G9672))
-      (\ Q . \ G9675 . AND
-       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G9675)) CAMIER) MERCIER)
-       (Q G9675))
+      (\ Q . \ G3294 . AND (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3294)) CAMIER)
+       (Q G3294))
+      (\ Q . \ G3297 . AND
+       (BELIEVE (HOPE (MIGHT (SAVE (\ X . COMPANY X) G3297)) CAMIER) MERCIER)
+       (Q G3297))
       (\ X . CEO X)))
 
 Try (cky-pprint) to see the details including the features and slash modalities.
@@ -25004,9 +25006,9 @@ Final LF, normal-order evaluated:
 
     (LAM X
      ((AND (LAM Y (((PROMISE (((ACCOM LONDON) X) Y)) X) Y)))
-      (LAM G9979 (((WANT (GO X)) X) G9979)))) =
+      (LAM G3601 (((WANT (GO X)) X) G3601)))) =
     (\ X . AND (\ Y . PROMISE (ACCOM LONDON X Y) X Y)
-     (\ G9986 . WANT (GO X) X G9986))
+     (\ G3608 . WANT (GO X) X G3608))
 
 Derivation 2
 --------------
@@ -25116,9 +25118,9 @@ Final LF, normal-order evaluated:
 
     (LAM X
      ((AND (LAM Y (((PROMISE (((ACCOM LONDON) X) Y)) X) Y)))
-      (LAM G9993 (((WANT (GO X)) X) G9993)))) =
+      (LAM G3615 (((WANT (GO X)) X) G3615)))) =
     (\ X . AND (\ Y . PROMISE (ACCOM LONDON X Y) X Y)
-     (\ G10000 . WANT (GO X) X G10000))
+     (\ G3622 . WANT (GO X) X G3622))
 
 Derivation 3
 --------------
@@ -25222,9 +25224,9 @@ Final LF, normal-order evaluated:
 
     (LAM X
      ((AND (LAM Y (((PROMISE (((ACCOM LONDON) X) Y)) X) Y)))
-      (LAM G10007 (((WANT (GO X)) X) G10007)))) =
+      (LAM G3629 (((WANT (GO X)) X) G3629)))) =
     (\ X . AND (\ Y . PROMISE (ACCOM LONDON X Y) X Y)
-     (\ G10014 . WANT (GO X) X G10014))
+     (\ G3636 . WANT (GO X) X G3636))
 
 Derivation 4
 --------------
@@ -25340,9 +25342,9 @@ Final LF, normal-order evaluated:
 
     (LAM X
      ((AND (LAM Y (((PROMISE (((ACCOM LONDON) X) Y)) X) Y)))
-      (LAM G10021 (((WANT (GO X)) X) G10021)))) =
+      (LAM G3643 (((WANT (GO X)) X) G3643)))) =
     (\ X . AND (\ Y . PROMISE (ACCOM LONDON X Y) X Y)
-     (\ G10028 . WANT (GO X) X G10028))
+     (\ G3650 . WANT (GO X) X G3650))
 
 Derivation 5
 --------------
@@ -25457,9 +25459,9 @@ LEX   (LONDON) := PP
 Final LF, normal-order evaluated: 
 
     ((AND (LAM Z (LAM Y (((PROMISE (((ACCOM LONDON) Z) Y)) Z) Y))))
-     (LAM Z (LAM G10035 (((WANT ((GO LONDON) Z)) Z) G10035)))) =
+     (LAM Z (LAM G3657 (((WANT ((GO LONDON) Z)) Z) G3657)))) =
     (AND (\ Z . \ Y . PROMISE (ACCOM LONDON Z Y) Z Y)
-     (\ Z . \ G10041 . WANT (GO LONDON Z) Z G10041))
+     (\ Z . \ G3663 . WANT (GO LONDON Z) Z G3663))
 
 Derivation 6
 --------------
@@ -25582,9 +25584,9 @@ LEX   (LONDON) := PP
 Final LF, normal-order evaluated: 
 
     ((AND (LAM Z (LAM Y (((PROMISE (((ACCOM LONDON) Z) Y)) Z) Y))))
-     (LAM Z (LAM G10047 (((WANT ((GO LONDON) Z)) Z) G10047)))) =
+     (LAM Z (LAM G3669 (((WANT ((GO LONDON) Z)) Z) G3669)))) =
     (AND (\ Z . \ Y . PROMISE (ACCOM LONDON Z Y) Z Y)
-     (\ Z . \ G10053 . WANT (GO LONDON Z) Z G10053))
+     (\ Z . \ G3675 . WANT (GO LONDON Z) Z G3675))
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
@@ -25676,9 +25678,9 @@ Final LF, normal-order evaluated:
 
     (LAM X
      (LAM Y
-      (LAM G10078
-       ((AND (((GIVE X) Y) G10078)) ((NOT (LAM Y ((READ X) Y))) G10078))))) =
-    (\ X . \ Y . \ G10090 . AND (GIVE X Y G10090) (NOT (\ Y . READ X Y) G10090))
+      (LAM G3700
+       ((AND (((GIVE X) Y) G3700)) ((NOT (LAM Y ((READ X) Y))) G3700))))) =
+    (\ X . \ Y . \ G3712 . AND (GIVE X Y G3712) (NOT (\ Y . READ X Y) G3712))
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.

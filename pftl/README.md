@@ -1,10 +1,7 @@
-; pftl files -- cem bozsahin & mark steedman, 2017
+; pftl files -- cem bozsahin & mark steedman, 2018
 
 ; These files are for the CCG derivations in
-  Projecting from the lexicon (PFTL) paper and its supplement.
-
-; example numbers are as in PFTL. The ones from the supplement
-;  are suffixed with an 'S'.
+  Projecting from the lexicon (PFTL) draft
 
 ; the files are (among others):
 ; pftl.ccg is the grammar file  in paper format
@@ -15,13 +12,13 @@
 1. cd to pftl directory
 2. $ ccglab
    then once in ccglab do
+2'. (load-grammar "pftl")
 3. (load "pftl.testsuite.lisp")
 4. (dribble "output")
 5. (pftl-ders)
 6. (dribble)
 
-Step 5 does all the derivations in the paper
-and the supplement, and saves them in the file 'output'.
+Step 5 does all the derivations, and saves them in the file 'output'.
 
 If you want you can check their LFs by
 7. (pftl-lfs)

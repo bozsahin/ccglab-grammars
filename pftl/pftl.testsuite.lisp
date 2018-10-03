@@ -77,11 +77,15 @@
 ))
 
 (defun  pftl-ders()
+  (pprint (which-ccglab))
+  (terpri)
   (dolist (p *pftl*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%========~%" (first p))
 			   (cky-show-deduction))))
 
 (defun  pftl-lfs()
+  (pprint (which-ccglab))
+  (terpri)
   (dolist (p *pftl*)
     (progn (ccg-deduce (second p))
 	   (format t "~%=======~%~s~%========~%" (first p))
