@@ -5,10 +5,7 @@
 ;; load this file in CCGlab after you did (load-grammar "pftl") or 
 ;; (load-model "pftl"), then run the relevant function defined below.
 
-(setf *f-subbar* t  ; these are off by default: turn them on
-      *b-subbar* t
-      *fx-subbar* t
-      *bx-subbar* t)
+(basic-ccg 'off)
 
 ;; set up a database of examples 
 (defparameter *pftl* '(
@@ -71,8 +68,9 @@
 (l1 (persuade Harry to buy and Barry to sell))
 (l2 (persuade to go to London John))
 (l3 (want to go and promise to accompany to London)) ;; think of who didja ...
-(o1 (what you can)) ;; and what you must not count on
-(o2 (what Terry asked)) ;; and what Mary promised Harry to read
+(lprime (folded rug over)) ; and curtains under, the painting
+(d1 (what you can)) ;; and what you must not count on
+(d2 (what Terry asked)) ;; and what Mary promised Harry to read
 (s2 (gave without reading)) ;; the book I gave without reading and lent wout stamping to Harry
 ))
 

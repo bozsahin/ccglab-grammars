@@ -1580,4 +1580,22 @@
        (DIR FS) (MODAL ALL) ((BCAT NP) (FEATS NIL))))
      (SEM (LAM X (LAM P (LAM Z ((("WANT" (P X)) X) Z))))) (PARAM 1.0))
     ((KEY 248) (PHON LONDON) (MORPH N) (SYN ((BCAT PP) (FEATS NIL)))
-     (SEM "LONDON") (PARAM 1.0))))
+     (SEM "LONDON") (PARAM 1.0))
+    ((KEY 249) (PHON FOLDED) (MORPH V)
+     (SYN
+      ((((BCAT VP) (FEATS NIL)) (DIR FS) (MODAL ALL) ((BCAT PP) (FEATS NIL)))
+       (DIR FS) (MODAL ALL) ((BCAT NP) (FEATS NIL))))
+     (SEM (LAM X (LAM Y (LAM Z ((("FOLD" Y) X) Z))))) (PARAM 1.0))
+    ((KEY 250) (PHON RUG) (MORPH N)
+     (SYN
+      ((((BCAT VP) (FEATS NIL)) (DIR FS) (MODAL ALL) ((BCAT PP) (FEATS NIL)))
+       (DIR BS) (MODAL ALL)
+       ((((BCAT VP) (FEATS NIL)) (DIR FS) (MODAL ALL) ((BCAT PP) (FEATS NIL)))
+        (DIR FS) (MODAL ALL) ((BCAT NP) (FEATS NIL)))))
+     (SEM (LAM P (P "RUG"))) (PARAM 1.0))
+    ((KEY 251) (PHON OVER) (MORPH P)
+     (SYN
+      ((((BCAT VP) (FEATS NIL)) (DIR BS) (MODAL ALL)
+        (((BCAT VP) (FEATS NIL)) (DIR FS) (MODAL ALL) ((BCAT PP) (FEATS NIL))))
+       (DIR FS) (MODAL ALL) ((BCAT NP) (FEATS NIL))))
+     (SEM (LAM P (LAM Q (Q ("OVER" P))))) (PARAM 1.0))))

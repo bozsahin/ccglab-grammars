@@ -324,3 +324,6 @@ go v       := vp[type=inf]/pp[case=dat] : \x\y. !go x y;
 accompany v := vp[type=inf]/pp[case=dat]/np : \x\y\z. !accom y x z;
 want v     := vp[type=inf]/vp[type=toinf]/np : \x\p\z. !want (p x) x z;
 London n   := pp : !london;
+folded v   := vp/pp/np : \x\y\z.!fold y x z;
+rug    n   := (vp/pp)\(vp/pp/np) : \p.p !rug;
+over   p   := (vp\(vp/pp))/np : \p\q.q(!over p); % value raised
