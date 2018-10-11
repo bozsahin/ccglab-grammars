@@ -303,7 +303,7 @@ ang-mga-pinggan n
 
 
 
-what wh     |:=|  s |/|  |(| s |/| np |)|   |:|   |\\| q |\\| y |.| !ques y  |(| q y |)|  |;| 
+what wh     |:=|  s |/|  |(| s |/| np |)|   |:|   |\\| q |\\| y |.| q y |;| 
 can  aux    |:=|   |(| s |\\| np |)|  |/|  |(| s |\\| np |)|   |:|   |\\| p |\\| x |.| !can  |(| p x |)|  |;| 
 Terry n     |:=|  s |/|  |(| s |\\| np |)|   |:|   |\\| p |.| p !terry |;| 
 asked v     |:=|   |(| s |\\| np |)|  |/| vp |[| type |=| toinf |]|  |/| np |:|   |\\| x |\\| p |\\| y |.| !ask  |(| p x |)|  x y |;| 

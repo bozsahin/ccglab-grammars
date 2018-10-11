@@ -1472,7 +1472,7 @@
      (SYN
       (((BCAT S) (FEATS NIL)) (DIR FS) (MODAL ALL)
        (((BCAT S) (FEATS NIL)) (DIR FS) (MODAL ALL) ((BCAT NP) (FEATS NIL)))))
-     (SEM (LAM Q (LAM Y (("QUES" Y) (Q Y))))) (PARAM 1.0))
+     (SEM (LAM Q (LAM Y (Q Y)))) (PARAM 1.0))
     ((KEY 229) (PHON CAN) (MORPH AUX)
      (SYN
       ((((BCAT S) (FEATS NIL)) (DIR BS) (MODAL ALL) ((BCAT NP) (FEATS NIL)))

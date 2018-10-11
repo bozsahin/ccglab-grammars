@@ -68,7 +68,7 @@
 (l1 (persuade Harry to buy and Barry to sell))
 (l2 (persuade to go to London John))
 (l3 (want to go and promise to accompany to London)) ;; think of who didja ...
-(lprime (folded rug over)) ; and curtains under, the painting
+(l4 (folded rug over)) ; and curtains under, the painting
 (d1 (what you can)) ;; and what you must not count on
 (d2 (what Terry asked)) ;; and what Mary promised Harry to read
 (s2 (gave without reading)) ;; the book I gave without reading and lent wout stamping to Harry

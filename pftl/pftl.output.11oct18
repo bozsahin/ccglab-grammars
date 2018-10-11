@@ -32,7 +32,7 @@ T
 T
 > (pftl-ders)
 
-"CCGlab, version 3.6.1.L"
+"CCGlab, version 5.0"
 
 =======
 4
@@ -2588,9 +2588,9 @@ LEX   (FAIRIES) := S/(S\NP)
         : (LAM P (P FAIRIES))
 LEX   (at the bottom of my garden) := S\(S/XP)
         : (LAM P (P ATBMG))
->Ox   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
+>Dx   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
         : (LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
-<Ox   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
+<Dx   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
         : (LAM H
            ((LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
             (LAM X
@@ -2621,9 +2621,9 @@ LEX   (FAIRIES) := S/(S\NP)
         : (LAM P (P FAIRIES))
 LEX   (at the bottom of my garden) := S\(S/XP)
         : (LAM P (P ATBMG))
->Ox   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
+>Dx   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
         : (LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
-<Ox   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
+<Dx   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
         : (LAM H
            ((LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
             (LAM X
@@ -2701,7 +2701,7 @@ LEX   (THERE) := ((S/XP)/NP)/((S\NP)/XP)
         : (LAM R (LAM Y (LAM P ((R P) Y))))
 LEX   (SEEM) := (S\NP)/VP
         : (LAM P (LAM Y (SEEM (P Y))))
->O    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
+>D    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
         : (LAM H
            ((LAM R (LAM Y (LAM P ((R P) Y))))
             (LAM X ((LAM P (LAM Y (SEEM (P Y)))) (H X)))))
@@ -2716,9 +2716,9 @@ LEX   (FAIRIES) := S/(S\NP)
         : (LAM P (P FAIRIES))
 LEX   (at the bottom of my garden) := S\(S/XP)
         : (LAM P (P ATBMG))
->Ox   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
+>Dx   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
         : (LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
-<Ox   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
+<Dx   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
         : (LAM H
            ((LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
             (LAM X
@@ -2739,7 +2739,7 @@ LEX   (THERE) := ((S/XP)/NP)/((S\NP)/XP)
         : (LAM R (LAM Y (LAM P ((R P) Y))))
 LEX   (SEEM) := (S\NP)/VP
         : (LAM P (LAM Y (SEEM (P Y))))
->O    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
+>D    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
         : (LAM H
            ((LAM R (LAM Y (LAM P ((R P) Y))))
             (LAM X ((LAM P (LAM Y (SEEM (P Y)))) (H X)))))
@@ -2754,9 +2754,9 @@ LEX   (FAIRIES) := S/(S\NP)
         : (LAM P (P FAIRIES))
 LEX   (at the bottom of my garden) := S\(S/XP)
         : (LAM P (P ATBMG))
->Ox   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
+>Dx   (FAIRIES)("at the bottom of my garden") := S\((S/XP)\NP)
         : (LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
-<Ox   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
+<Dx   (THERE SEEM "to be")(FAIRIES "at the bottom of my garden") := S/(NP\NP)
         : (LAM H
            ((LAM H ((LAM P (P FAIRIES)) (LAM X ((LAM P (P ATBMG)) (H X)))))
             (LAM X
@@ -2777,7 +2777,7 @@ LEX   (THERE) := ((S/XP)/NP)/((S\NP)/XP)
         : (LAM R (LAM Y (LAM P ((R P) Y))))
 LEX   (SEEM) := (S\NP)/VP
         : (LAM P (LAM Y (SEEM (P Y))))
->O    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
+>D    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
         : (LAM H
            ((LAM R (LAM Y (LAM P ((R P) Y))))
             (LAM X ((LAM P (LAM Y (SEEM (P Y)))) (H X)))))
@@ -2812,7 +2812,7 @@ LEX   (THERE) := ((S/XP)/NP)/((S\NP)/XP)
         : (LAM R (LAM Y (LAM P ((R P) Y))))
 LEX   (SEEM) := (S\NP)/VP
         : (LAM P (LAM Y (SEEM (P Y))))
->O    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
+>D    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
         : (LAM H
            ((LAM R (LAM Y (LAM P ((R P) Y))))
             (LAM X ((LAM P (LAM Y (SEEM (P Y)))) (H X)))))
@@ -2911,7 +2911,7 @@ LEX   (THERE) := ((S/XP)/NP)/((S\NP)/XP)
         : (LAM R (LAM Y (LAM P ((R P) Y))))
 LEX   (SEEM) := (S\NP)/VP
         : (LAM P (LAM Y (SEEM (P Y))))
->O    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
+>D    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
         : (LAM H
            ((LAM R (LAM Y (LAM P ((R P) Y))))
             (LAM X ((LAM P (LAM Y (SEEM (P Y)))) (H X)))))
@@ -2951,7 +2951,7 @@ LEX   (THERE) := ((S/XP)/NP)/((S\NP)/XP)
         : (LAM R (LAM Y (LAM P ((R P) Y))))
 LEX   (SEEM) := (S\NP)/VP
         : (LAM P (LAM Y (SEEM (P Y))))
->O    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
+>D    (THERE)(SEEM) := ((S/XP)/NP)/(VP/XP)
         : (LAM H
            ((LAM R (LAM Y (LAM P ((R P) Y))))
             (LAM X ((LAM P (LAM Y (SEEM (P Y)))) (H X)))))
@@ -3031,7 +3031,7 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (SALLY) := S/(S\NP)
         : (LAM P (P SALLY))
->O    (THAT)(SALLY) := (N\N)/((S\NP)/NP)
+>D    (THAT)(SALLY) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P SALLY)) (H X)))))
@@ -3130,7 +3130,7 @@ LEX   (US) := (S/(S\NP))\*N
         : (LAM X (LAM P (P X)))
 <     (BALB)(US) := S/(S\NP)
         : ((LAM X (LAM P (P X))) BALB)
->O    (QUEM)(BALB US) := ((S/(S\NP))\(S/(S\NP)))/((S\NP)\NP)
+>D    (QUEM)(BALB US) := ((S/(S\NP))\(S/(S\NP)))/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) ((Q (LAM X X)) X)))))
             (LAM X (((LAM X (LAM P (P X))) BALB) (H X)))))
@@ -3198,7 +3198,7 @@ LEX   (VULT) := (S\NP)\(S\NP)
                  ((LAM X (LAM Y ((BUILD X) Y))) X))))
               Z)
              ((LAM P (LAM X ((WANT (P X)) X))) W))))
-<Ox   (MUR US)(QUEM BALB US AEDIFICARE VULT) := (S\(S/(S\NP)))/((S\NP)\NP)
+<Dx   (MUR US)(QUEM BALB US AEDIFICARE VULT) := (S\(S/(S\NP)))/((S\NP)\NP)
         : (LAM H
            ((LAM W
              (LAM Z
@@ -3235,7 +3235,7 @@ LEX   (US) := (S/(S\NP))\*N
         : (LAM X (LAM P (P X)))
 <     (BALB)(US) := S/(S\NP)
         : ((LAM X (LAM P (P X))) BALB)
->O    (QUEM)(BALB US) := ((S/(S\NP))\(S/(S\NP)))/((S\NP)\NP)
+>D    (QUEM)(BALB US) := ((S/(S\NP))\(S/(S\NP)))/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) ((Q (LAM X X)) X)))))
             (LAM X (((LAM X (LAM P (P X))) BALB) (H X)))))
@@ -3257,7 +3257,7 @@ LEX   (VULT) := (S\NP)\(S\NP)
                (LAM X (LAM Y ((BUILD X) Y))))
               Z)
              ((LAM P (LAM X ((WANT (P X)) X))) W))))
-<Ox   (MUR US)(QUEM BALB US AEDIFICARE VULT) := (S\(S/(S\NP)))/((S\NP)\NP)
+<Dx   (MUR US)(QUEM BALB US AEDIFICARE VULT) := (S\(S/(S\NP)))/((S\NP)\NP)
         : (LAM H
            ((LAM W
              (LAM Z
@@ -3343,7 +3343,7 @@ LEX   (US) := (S/(S\NP))\*N
         : (LAM X (LAM P (P X)))
 <     (BALB)(US) := S/(S\NP)
         : ((LAM X (LAM P (P X))) BALB)
->O    (QUEM)(BALB US) := ((S/(S\NP))\(S/(S\NP)))/((S\NP)\NP)
+>D    (QUEM)(BALB US) := ((S/(S\NP))\(S/(S\NP)))/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) ((Q (LAM X X)) X)))))
             (LAM X (((LAM X (LAM P (P X))) BALB) (H X)))))
@@ -3627,7 +3627,7 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (BALBUS) := S/(S\NP)
         : (LAM P (P BALB))
->O    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
+>D    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P BALB)) (H X)))))
@@ -3672,7 +3672,7 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (BALBUS) := S/(S\NP)
         : (LAM P (P BALB))
->O    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
+>D    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P BALB)) (H X)))))
@@ -3721,7 +3721,7 @@ LEX   (WANTS) := (S\NP)/VP
         : (LAM P (LAM Y ((WANT (P Y)) Y)))
 >B    (BALBUS)(WANTS) := S/VP
         : (LAM X ((LAM P (P BALB)) ((LAM P (LAM Y ((WANT (P Y)) Y))) X)))
->O    (THAT)(BALBUS WANTS) := (N\N)/(VP/NP)
+>D    (THAT)(BALBUS WANTS) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -3762,13 +3762,13 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (BALBUS) := S/(S\NP)
         : (LAM P (P BALB))
->O    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
+>D    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P BALB)) (H X)))))
 LEX   (WANTS) := (S\NP)/VP
         : (LAM P (LAM Y ((WANT (P Y)) Y)))
->O    (THAT BALBUS)(WANTS) := (N\N)/(VP/NP)
+>D    (THAT BALBUS)(WANTS) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -3819,7 +3819,7 @@ LEX   (TO) := VP/VP
         : (LAM X
            ((LAM P (P BALB))
             ((LAM X ((LAM P (LAM Y ((WANT (P Y)) Y))) ((LAM P P) X))) X)))
->O    (THAT)(BALBUS WANTS TO) := (N\N)/(VP/NP)
+>D    (THAT)(BALBUS WANTS TO) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -3873,7 +3873,7 @@ LEX   (TO) := VP/VP
         : (LAM X
            ((LAM X ((LAM P (P BALB)) ((LAM P (LAM Y ((WANT (P Y)) Y))) X)))
             ((LAM P P) X)))
->O    (THAT)(BALBUS WANTS TO) := (N\N)/(VP/NP)
+>D    (THAT)(BALBUS WANTS TO) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -3918,7 +3918,7 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (BALBUS) := S/(S\NP)
         : (LAM P (P BALB))
->O    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
+>D    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P BALB)) (H X)))))
@@ -3928,7 +3928,7 @@ LEX   (TO) := VP/VP
         : (LAM P P)
 >B    (WANTS)(TO) := (S\NP)/VP
         : (LAM X ((LAM P (LAM Y ((WANT (P Y)) Y))) ((LAM P P) X)))
->O    (THAT BALBUS)(WANTS TO) := (N\N)/(VP/NP)
+>D    (THAT BALBUS)(WANTS TO) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -3974,7 +3974,7 @@ LEX   (WANTS) := (S\NP)/VP
         : (LAM P (LAM Y ((WANT (P Y)) Y)))
 >B    (BALBUS)(WANTS) := S/VP
         : (LAM X ((LAM P (P BALB)) ((LAM P (LAM Y ((WANT (P Y)) Y))) X)))
->O    (THAT)(BALBUS WANTS) := (N\N)/(VP/NP)
+>D    (THAT)(BALBUS WANTS) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -3982,7 +3982,7 @@ LEX   (WANTS) := (S\NP)/VP
               (H X)))))
 LEX   (TO) := VP/VP
         : (LAM P P)
->O    (THAT BALBUS WANTS)(TO) := (N\N)/(VP/NP)
+>D    (THAT BALBUS WANTS)(TO) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -4027,13 +4027,13 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (BALBUS) := S/(S\NP)
         : (LAM P (P BALB))
->O    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
+>D    (THAT)(BALBUS) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P BALB)) (H X)))))
 LEX   (WANTS) := (S\NP)/VP
         : (LAM P (LAM Y ((WANT (P Y)) Y)))
->O    (THAT BALBUS)(WANTS) := (N\N)/(VP/NP)
+>D    (THAT BALBUS)(WANTS) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -4041,7 +4041,7 @@ LEX   (WANTS) := (S\NP)/VP
             (LAM X ((LAM P (LAM Y ((WANT (P Y)) Y))) (H X)))))
 LEX   (TO) := VP/VP
         : (LAM P P)
->O    (THAT BALBUS WANTS)(TO) := (N\N)/(VP/NP)
+>D    (THAT BALBUS WANTS)(TO) := (N\N)/(VP/NP)
         : (LAM H
            ((LAM H
              ((LAM H
@@ -4126,7 +4126,7 @@ LEX   (US) := (S/(S\NP))\*N
         : (LAM X (LAM P (P X)))
 <     (BALB)(US) := S/(S\NP)
         : ((LAM X (LAM P (P X))) BALB)
->O    (MUR UM)(BALB US) := S/((S\NP)\NP)
+>D    (MUR UM)(BALB US) := S/((S\NP)\NP)
         : (LAM H
            (((LAM X (LAM P (P X))) WALL)
             (LAM X (((LAM X (LAM P (P X))) BALB) (H X)))))
@@ -4591,7 +4591,7 @@ LEX   (-NU) := ((S/(S\NP))\(S/(S\NP)))\(S\NP)
             (LAM R (LAM X ((AND (R X)) ((AND (P X)) ((Q (LAM X X)) X)))))))
 LEX   (begun guda-gu) := ((S/(S\NP))\(S/(S\NP)))\(((S/(S\NP))\(S/(S\NP)))/NP)
         : (LAM P (P DOG))
-<O    (-NU)("begun guda-gu") := ((S/(S\NP))\(S/(S\NP)))\((S\NP)/NP)
+<D    (-NU)("begun guda-gu") := ((S/(S\NP))\(S/(S\NP)))\((S\NP)/NP)
         : (LAM H
            ((LAM P (P DOG))
             (LAM X
@@ -4785,7 +4785,7 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (JACK) := S/(S\NP)
         : (LAM P (P JACK))
->O    (THAT)(JACK) := (N\N)/((S\NP)/NP)
+>D    (THAT)(JACK) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P JACK)) (H X)))))
@@ -4857,7 +4857,7 @@ LEX   (THAT) := (N\N)/(S/NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (JACK) := S/(S\NP)
         : (LAM P (P JACK))
->O    (THAT)(JACK) := (N\N)/((S\NP)/NP)
+>D    (THAT)(JACK) := (N\N)/((S\NP)/NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P JACK)) (H X)))))
@@ -5068,7 +5068,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -5263,7 +5263,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -5428,7 +5428,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -5444,7 +5444,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -5596,7 +5596,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -5608,13 +5608,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -5757,13 +5757,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -5951,13 +5951,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -6115,13 +6115,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -6137,7 +6137,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -6282,13 +6282,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -6300,13 +6300,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -6450,7 +6450,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -6608,7 +6608,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -6767,7 +6767,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -6908,7 +6908,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -7078,7 +7078,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -7216,13 +7216,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -7372,13 +7372,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -7529,13 +7529,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -7668,13 +7668,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -7836,13 +7836,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -7980,7 +7980,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -8004,7 +8004,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -8136,7 +8136,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -8160,7 +8160,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -8289,13 +8289,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -8318,7 +8318,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -8442,13 +8442,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -8471,7 +8471,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -8600,7 +8600,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -8616,7 +8616,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -8748,7 +8748,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -8760,13 +8760,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -8893,13 +8893,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -8915,7 +8915,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -9039,13 +9039,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -9057,13 +9057,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -9190,7 +9190,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -9218,7 +9218,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -9336,13 +9336,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -9369,7 +9369,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -9487,7 +9487,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -9511,7 +9511,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -9524,7 +9524,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -9644,13 +9644,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -9673,7 +9673,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -9685,7 +9685,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -9803,7 +9803,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -9987,7 +9987,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -10140,13 +10140,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -10321,13 +10321,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -10479,7 +10479,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -10503,7 +10503,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -10650,13 +10650,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -10679,7 +10679,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -10823,7 +10823,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -10839,7 +10839,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -10987,7 +10987,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -10999,13 +10999,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -11146,13 +11146,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -11168,7 +11168,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -11307,13 +11307,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -11325,13 +11325,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -11471,7 +11471,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -11499,7 +11499,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -11634,13 +11634,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -11667,7 +11667,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -11799,7 +11799,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -11823,7 +11823,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -11836,7 +11836,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -11972,13 +11972,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -12001,7 +12001,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -12013,7 +12013,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -12144,7 +12144,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -12339,7 +12339,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -12504,7 +12504,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -12520,7 +12520,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -12672,7 +12672,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -12684,13 +12684,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -12833,13 +12833,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -13027,13 +13027,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -13191,13 +13191,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -13213,7 +13213,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -13358,13 +13358,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -13376,13 +13376,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -13526,7 +13526,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -13684,7 +13684,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -13843,7 +13843,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -13984,7 +13984,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -14154,7 +14154,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -14292,13 +14292,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -14448,13 +14448,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -14605,13 +14605,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -14744,13 +14744,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -14912,13 +14912,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -15056,7 +15056,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -15080,7 +15080,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -15212,7 +15212,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -15236,7 +15236,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -15365,13 +15365,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -15394,7 +15394,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -15518,13 +15518,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -15547,7 +15547,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -15676,7 +15676,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -15692,7 +15692,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -15824,7 +15824,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -15836,13 +15836,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -15969,13 +15969,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -15991,7 +15991,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -16115,13 +16115,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -16133,13 +16133,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -16266,7 +16266,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -16294,7 +16294,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -16412,13 +16412,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -16445,7 +16445,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -16563,7 +16563,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -16587,7 +16587,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -16600,7 +16600,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -16720,13 +16720,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -16749,7 +16749,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -16761,7 +16761,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -16879,7 +16879,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -17063,7 +17063,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -17216,13 +17216,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -17397,13 +17397,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -17555,7 +17555,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -17579,7 +17579,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -17726,13 +17726,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -17755,7 +17755,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -17899,7 +17899,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -17915,7 +17915,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -18063,7 +18063,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -18075,13 +18075,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -18222,13 +18222,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -18244,7 +18244,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -18383,13 +18383,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -18401,13 +18401,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -18547,7 +18547,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -18575,7 +18575,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -18710,13 +18710,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -18743,7 +18743,7 @@ LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
 >B    (CAMIER)(HOPES) := S/S
         : (LAM X ((LAM P (P CAMIER)) ((LAM S (LAM X ((HOPE S) X))) X)))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -18875,7 +18875,7 @@ LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
 >B    (MERCIER)(BELIEVES) := S/S
         : (LAM X ((LAM P (P MERCIER)) ((LAM S (LAM X ((BELIEVE S) X))) X)))
->O    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
+>D    (WHO)(MERCIER BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X
@@ -18899,7 +18899,7 @@ LEX   (WHO) := (N\N)/(S\NP)
                (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -18912,7 +18912,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -19048,13 +19048,13 @@ LEX   (WHO) := (N\N)/(S\NP)
         : (LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
 LEX   (MERCIER) := S/(S\NP)
         : (LAM P (P MERCIER))
->O    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
+>D    (WHO)(MERCIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
             (LAM X ((LAM P (P MERCIER)) (H X)))))
 LEX   (BELIEVES) := (S\NP)/S
         : (LAM S (LAM X ((BELIEVE S) X)))
->O    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
+>D    (WHO MERCIER)(BELIEVES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -19077,7 +19077,7 @@ LEX   (WHO) := (N\N)/(S\NP)
              (LAM X ((LAM S (LAM X ((BELIEVE S) X))) (H X))))))
 LEX   (CAMIER) := S/(S\NP)
         : (LAM P (P CAMIER))
->O    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
+>D    (WHO MERCIER BELIEVES AND WHO)(CAMIER) := (N\N)/((S\NP)\NP)
         : (LAM H
            ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
               (LAM P (LAM Q (LAM X ((AND (P X)) (Q X))))))
@@ -19089,7 +19089,7 @@ LEX   (CAMIER) := S/(S\NP)
             (LAM X ((LAM P (P CAMIER)) (H X)))))
 LEX   (HOPES) := (S\NP)/S
         : (LAM S (LAM X ((HOPE S) X)))
->O    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
+>D    (WHO MERCIER BELIEVES AND WHO CAMIER)(HOPES) := (N\N)/(S\NP)
         : (LAM H
            ((LAM H
              ((((LAM P (LAM Q (LAM X ((AND (P X)) (Q X)))))
@@ -19261,7 +19261,7 @@ LEX   (UBUR) := S/(S/NP)
         : (LAM P (P UBUR))
 LEX   (A-TUUK) := S\NP
         : (LAM X (PLAY X))
->Ox   (UBUR)(A-TUUK) := S\(NP/NP)
+>Dx   (UBUR)(A-TUUK) := S\(NP/NP)
         : (LAM H ((LAM P (P UBUR)) (LAM X ((LAM X (PLAY X)) (H X)))))
 
 Final LF, normal-order evaluated: 
@@ -19300,7 +19300,7 @@ LEX   (DHAAG-E) := (S\NP)\((S\NP)/NP)
         : (LAM P (P WOMAN))
 <     (A-PUOT)(DHAAG-E) := S\NP
         : ((LAM P (P WOMAN)) (LAM Y (LAM X ((BEAT X) Y))))
->Ox   (UBUR)(A-PUOT DHAAG-E) := S\(NP/NP)
+>Dx   (UBUR)(A-PUOT DHAAG-E) := S\(NP/NP)
         : (LAM H
            ((LAM P (P UBUR))
             (LAM X (((LAM P (P WOMAN)) (LAM Y (LAM X ((BEAT X) Y)))) (H X)))))
@@ -19364,7 +19364,7 @@ LEX   (A-YAAN-E) := (S\NP)/NP
         : (LAM Y (LAM X ((INSULT X) Y)))
 >B    (DHAAGE)(A-YAAN-E) := S/NP
         : (LAM X ((LAM P (P WOMAN)) ((LAM Y (LAM X ((INSULT X) Y))) X)))
->O    (UBUR)(DHAAGE A-YAAN-E) := S/(NP\NP)
+>D    (UBUR)(DHAAGE A-YAAN-E) := S/(NP\NP)
         : (LAM H
            ((LAM P (P UBUR))
             (LAM X
@@ -19382,7 +19382,7 @@ LEX   (UBUR) := S/(S/NP)
         : (LAM P (P UBUR))
 LEX   (DHAAGE) := S/(S\NP)
         : (LAM P (P WOMAN))
->O    (UBUR)(DHAAGE) := S/((S\NP)/NP)
+>D    (UBUR)(DHAAGE) := S/((S\NP)/NP)
         : (LAM H ((LAM P (P UBUR)) (LAM X ((LAM P (P WOMAN)) (H X)))))
 LEX   (A-YAAN-E) := (S\NP)/NP
         : (LAM Y (LAM X ((INSULT X) Y)))
@@ -19401,11 +19401,11 @@ LEX   (UBUR) := S/(S\NP)
         : (LAM P (P UBUR))
 LEX   (DHAAGE) := S/(S\NP)
         : (LAM P (P WOMAN))
->O    (UBUR)(DHAAGE) := S/((S\NP)\NP)
+>D    (UBUR)(DHAAGE) := S/((S\NP)\NP)
         : (LAM H ((LAM P (P UBUR)) (LAM X ((LAM P (P WOMAN)) (H X)))))
 LEX   (A-YAAN-E) := (S\NP)/NP
         : (LAM Y (LAM X ((INSULT X) Y)))
->O    (UBUR DHAAGE)(A-YAAN-E) := S/(NP\NP)
+>D    (UBUR DHAAGE)(A-YAAN-E) := S/(NP\NP)
         : (LAM H
            ((LAM H ((LAM P (P UBUR)) (LAM X ((LAM P (P WOMAN)) (H X)))))
             (LAM X ((LAM Y (LAM X ((INSULT X) Y))) (H X)))))
@@ -19450,7 +19450,7 @@ LEX   (HIMSELF) := (S\NP)\((S\NP)/NP)
         : (LAM P (P SELF))
 <     (SAW)(HIMSELF) := S\NP
         : ((LAM P (P SELF)) (LAM A (LAM Y ((SAW (A Y)) Y))))
->Ox   (HARRY)(SAW HIMSELF) := S\(NP\NP)
+>Dx   (HARRY)(SAW HIMSELF) := S\(NP\NP)
         : (LAM H
            ((LAM P (P HARRY))
             (LAM X (((LAM P (P SELF)) (LAM A (LAM Y ((SAW (A Y)) Y)))) (H X)))))
@@ -19583,7 +19583,7 @@ LEX   (ei hun) := S\(S/NP)
         : (LAM P (P SELF))
 <B    (GWYN)("ei hun") := S\((S/NP)/NP)
         : (LAM X ((LAM P (P SELF)) ((LAM P (P GWYN)) X)))
-<Ox   (GWELODD)(GWYN "ei hun") := S/(NP/NP)
+<Dx   (GWELODD)(GWYN "ei hun") := S/(NP/NP)
         : (LAM H
            ((LAM X ((LAM P (P SELF)) ((LAM P (P GWYN)) X)))
             (LAM X ((LAM Y (LAM X ((SAW X) Y))) (H X)))))
@@ -19617,7 +19617,7 @@ LEX   (GWELODD) := (S/NP)/NP
         : (LAM Y (LAM X ((SAW X) Y)))
 LEX   (GWYN) := (S/NP)\((S/NP)/NP)
         : (LAM P (P GWYN))
-<Ox   (GWELODD)(GWYN) := (S/NP)/(NP/NP)
+<Dx   (GWELODD)(GWYN) := (S/NP)/(NP/NP)
         : (LAM H ((LAM P (P GWYN)) (LAM X ((LAM Y (LAM X ((SAW X) Y))) (H X)))))
 LEX   (ei hun) := S\(S/NP)
         : (LAM P (P SELF))
@@ -24139,7 +24139,7 @@ LEX   (ni pedro) := (S/S)\((S/S)/NP)
         : (LAM P (P PEDRO))
 <     (SINABI)("ni pedro") := S/S
         : ((LAM P (P PEDRO)) (LAM X (LAM P ((SAY P) X))))
->O    (ANG)(SINABI "ni pedro") := (S\(S/NP))/(S/NP)
+>D    (ANG)(SINABI "ni pedro") := (S\(S/NP))/(S/NP)
         : (LAM H
            ((LAM P (LAM X (P X)))
             (LAM X (((LAM P (P PEDRO)) (LAM X (LAM P ((SAY P) X)))) (H X)))))
@@ -24185,7 +24185,7 @@ LEX   (ni pedro) := (S/S)\((S/S)/NP)
         : (LAM P (P PEDRO))
 <     (SINABI)("ni pedro") := S/S
         : ((LAM P (P PEDRO)) (LAM X (LAM P ((SAY P) X))))
->O    (ANG)(SINABI "ni pedro") := (S\(S/NP))/(S/NP)
+>D    (ANG)(SINABI "ni pedro") := (S\(S/NP))/(S/NP)
         : (LAM H
            ((LAM P (LAM X (P X)))
             (LAM X (((LAM P (P PEDRO)) (LAM X (LAM P ((SAY P) X)))) (H X)))))
@@ -24236,7 +24236,7 @@ LEX   (NA) := S/S
 >B    (SINABI "ni pedro")(NA) := S/S
         : (LAM X
            (((LAM P (P PEDRO)) (LAM X (LAM P ((SAY P) X)))) ((LAM P P) X)))
->O    (ANG)(SINABI "ni pedro" NA) := (S\(S/NP))/(S/NP)
+>D    (ANG)(SINABI "ni pedro" NA) := (S\(S/NP))/(S/NP)
         : (LAM H
            ((LAM P (LAM X (P X)))
             (LAM X
@@ -24286,13 +24286,13 @@ LEX   (ni pedro) := (S/S)\((S/S)/NP)
         : (LAM P (P PEDRO))
 <     (SINABI)("ni pedro") := S/S
         : ((LAM P (P PEDRO)) (LAM X (LAM P ((SAY P) X))))
->O    (ANG)(SINABI "ni pedro") := (S\(S/NP))/(S/NP)
+>D    (ANG)(SINABI "ni pedro") := (S\(S/NP))/(S/NP)
         : (LAM H
            ((LAM P (LAM X (P X)))
             (LAM X (((LAM P (P PEDRO)) (LAM X (LAM P ((SAY P) X)))) (H X)))))
 LEX   (NA) := S/S
         : (LAM P P)
->O    (ANG SINABI "ni pedro")(NA) := (S\(S/NP))/(S/NP)
+>D    (ANG SINABI "ni pedro")(NA) := (S\(S/NP))/(S/NP)
         : (LAM H
            ((LAM H
              ((LAM P (LAM X (P X)))
@@ -25591,60 +25591,137 @@ Final LF, normal-order evaluated:
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-O1
+L4
+========
+
+
+Derivation 1
+--------------
+LEX   (FOLDED) := (VP/PP)/NP
+        : (LAM X (LAM Y (LAM Z (((FOLD Y) X) Z))))
+LEX   (RUG) := (VP/PP)\((VP/PP)/NP)
+        : (LAM P (P RUG))
+LEX   (OVER) := (VP\(VP/PP))/NP
+        : (LAM P (LAM Q (Q (OVER P))))
+<L    (RUG)(OVER) := (VP/NP)\((VP/PP)/NP)
+        : (LAM W (LAM Z (((LAM P (LAM Q (Q (OVER P)))) Z) ((LAM P (P RUG)) W))))
+<     (FOLDED)(RUG OVER) := VP/NP
+        : ((LAM W
+            (LAM Z (((LAM P (LAM Q (Q (OVER P)))) Z) ((LAM P (P RUG)) W))))
+           (LAM X (LAM Y (LAM Z (((FOLD Y) X) Z)))))
+
+Final LF, normal-order evaluated: 
+
+    (LAM Z (LAM G3680 (((FOLD (OVER Z)) RUG) G3680))) =
+    (\ Z . \ G3684 . FOLD (OVER Z) RUG G3684)
+
+Try (cky-pprint) to see the details including the features and slash modalities.
+    (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
+=======
+D1
 ========
 
 
 Derivation 1
 --------------
 LEX   (WHAT) := S/(S/NP)
-        : (LAM Q (LAM Y ((QUES Y) (Q Y))))
+        : (LAM Q (LAM Y (Q Y)))
 LEX   (YOU) := S/(S\NP)
         : (LAM P (P YOU))
 LEX   (CAN) := (S\NP)/(S\NP)
         : (LAM P (LAM X (CAN (P X))))
 >B    (YOU)(CAN) := S/(S\NP)
         : (LAM X ((LAM P (P YOU)) ((LAM P (LAM X (CAN (P X)))) X)))
->O    (WHAT)(YOU CAN) := S/((S\NP)/NP)
+>D    (WHAT)(YOU CAN) := S/((S\NP)/NP)
         : (LAM H
-           ((LAM Q (LAM Y ((QUES Y) (Q Y))))
+           ((LAM Q (LAM Y (Q Y)))
             (LAM X
              ((LAM X ((LAM P (P YOU)) ((LAM P (LAM X (CAN (P X)))) X)))
               (H X)))))
 
 Final LF, normal-order evaluated: 
 
-    (LAM H (LAM Y ((QUES Y) (CAN ((H Y) YOU))))) =
-    (\ H . \ Y . QUES Y (CAN (H Y YOU)))
+    (LAM H (LAM Y (CAN ((H Y) YOU)))) =
+    (\ H . \ Y . CAN (H Y YOU))
 
 Derivation 2
 --------------
 LEX   (WHAT) := S/(S/NP)
-        : (LAM Q (LAM Y ((QUES Y) (Q Y))))
+        : (LAM Q (LAM Y (Q Y)))
 LEX   (YOU) := S/(S\NP)
         : (LAM P (P YOU))
->O    (WHAT)(YOU) := S/((S\NP)/NP)
-        : (LAM H
-           ((LAM Q (LAM Y ((QUES Y) (Q Y)))) (LAM X ((LAM P (P YOU)) (H X)))))
+>D    (WHAT)(YOU) := S/((S\NP)/NP)
+        : (LAM H ((LAM Q (LAM Y (Q Y))) (LAM X ((LAM P (P YOU)) (H X)))))
 LEX   (CAN) := (S\NP)/(S\NP)
         : (LAM P (LAM X (CAN (P X))))
->O    (WHAT YOU)(CAN) := S/((S\NP)/NP)
+>D    (WHAT YOU)(CAN) := S/((S\NP)/NP)
         : (LAM H
-           ((LAM H
-             ((LAM Q (LAM Y ((QUES Y) (Q Y))))
-              (LAM X ((LAM P (P YOU)) (H X)))))
+           ((LAM H ((LAM Q (LAM Y (Q Y))) (LAM X ((LAM P (P YOU)) (H X)))))
             (LAM X ((LAM P (LAM X (CAN (P X)))) (H X)))))
 
 Final LF, normal-order evaluated: 
 
-    (LAM H (LAM Y ((QUES Y) (CAN ((H Y) YOU))))) =
-    (\ H . \ Y . QUES Y (CAN (H Y YOU)))
+    (LAM H (LAM Y (CAN ((H Y) YOU)))) =
+    (\ H . \ Y . CAN (H Y YOU))
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
 =======
-O2
+D2
 ========
+
+
+Derivation 1
+--------------
+LEX   (WHAT) := S/(S/NP)
+        : (LAM Q (LAM Y (Q Y)))
+LEX   (TERRY) := S/(S\NP)
+        : (LAM P (P TERRY))
+LEX   (ASKED) := ((S\NP)/VP)/NP
+        : (LAM X (LAM P (LAM Y (((ASK (P X)) X) Y))))
+>B2   (TERRY)(ASKED) := (S/VP)/NP
+        : (LAM X
+           (LAM Y
+            ((LAM P (P TERRY))
+             (((LAM X (LAM P (LAM Y (((ASK (P X)) X) Y)))) X) Y))))
+>D2   (WHAT)(TERRY ASKED) := (S/(VP/NP))/NP
+        : (LAM X1
+           (LAM H
+            ((LAM Q (LAM Y (Q Y)))
+             (LAM X2
+              (((LAM X
+                 (LAM Y
+                  ((LAM P (P TERRY))
+                   (((LAM X (LAM P (LAM Y (((ASK (P X)) X) Y)))) X) Y))))
+                X1)
+               (H X2))))))
+
+Final LF, normal-order evaluated: 
+
+    (LAM X1 (LAM H (LAM Y (((ASK ((H Y) X1)) X1) TERRY)))) =
+    (\ X1 . \ H . \ Y . ASK (H Y X1) X1 TERRY)
+
+Derivation 2
+--------------
+LEX   (WHAT) := S/(S/NP)
+        : (LAM Q (LAM Y (Q Y)))
+LEX   (TERRY) := S/(S\NP)
+        : (LAM P (P TERRY))
+>D    (WHAT)(TERRY) := S/((S\NP)/NP)
+        : (LAM H ((LAM Q (LAM Y (Q Y))) (LAM X ((LAM P (P TERRY)) (H X)))))
+LEX   (ASKED) := ((S\NP)/VP)/NP
+        : (LAM X (LAM P (LAM Y (((ASK (P X)) X) Y))))
+>D2   (WHAT TERRY)(ASKED) := (S/(VP/NP))/NP
+        : (LAM X1
+           (LAM H
+            ((LAM H ((LAM Q (LAM Y (Q Y))) (LAM X ((LAM P (P TERRY)) (H X)))))
+             (LAM X2
+              (((LAM X (LAM P (LAM Y (((ASK (P X)) X) Y)))) X1) (H X2))))))
+
+Final LF, normal-order evaluated: 
+
+    (LAM X1 (LAM H (LAM Y (((ASK ((H Y) X1)) X1) TERRY)))) =
+    (\ X1 . \ H . \ Y . ASK (H Y X1) X1 TERRY)
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
@@ -25678,9 +25755,9 @@ Final LF, normal-order evaluated:
 
     (LAM X
      (LAM Y
-      (LAM G3700
-       ((AND (((GIVE X) Y) G3700)) ((NOT (LAM Y ((READ X) Y))) G3700))))) =
-    (\ X . \ Y . \ G3712 . AND (GIVE X Y G3712) (NOT (\ Y . READ X Y) G3712))
+      (LAM G3758
+       ((AND (((GIVE X) Y) G3758)) ((NOT (LAM Y ((READ X) Y))) G3758))))) =
+    (\ X . \ Y . \ G3770 . AND (GIVE X Y G3770) (NOT (\ Y . READ X Y) G3770))
 
 Try (cky-pprint) to see the details including the features and slash modalities.
     (cky-reveal-cell <cell>) to pretty-print the parse in <cell>.
