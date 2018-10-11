@@ -28,11 +28,13 @@
 
 
 (defun  fg2018-ders()
+  (pprint (which-ccglab))
   (dolist (p *fg2018*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%========~%" (first p))
 			   (cky-show-deduction (third p)))))
 
 (defun  fg2018-lfs()
+  (pprint (which-ccglab))
   (dolist (p *fg2018*)
     (progn (ccg-deduce (second p))
 	   (format t "~%=======~%~s~%========~%" (first p))
