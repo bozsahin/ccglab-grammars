@@ -76,6 +76,7 @@
 
 (defun  pftl-ders()
   (pprint (which-ccglab))
+  (status)
   (terpri)
   (dolist (p *pftl*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%========~%" (first p))
@@ -83,6 +84,7 @@
 
 (defun  pftl-lfs()
   (pprint (which-ccglab))
+  (status)
   (terpri)
   (dolist (p *pftl*)
     (progn (ccg-deduce (second p))
