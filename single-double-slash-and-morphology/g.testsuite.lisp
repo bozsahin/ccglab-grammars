@@ -6,12 +6,14 @@
 (5 (uyu -ma -yan adam)) ; 2 analyses for this one, one phrasal one lexical, same lf
 ))
 
-(defun  deriv-test() ;; derivations test--going through all of them
+(defun  test-ders() ;; derivations test--going through all of them
+  (status)
+  (pprint (which-ccglab))
   (dolist (p *data*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%~s~%========~%" (first p)(second p))
 			   (cky-show-deduction))))
 
-(defun  lf-test() ;; verifying lfs for well formedness --- adequacy is up to you
+(defun  test-lfs() ;; verifying lfs for well formedness --- adequacy is up to you
   (dolist (p *data*)
     (progn (ccg-deduce (second p))
 	   (format t "~%=======~%~s~%~s~%========~%" (first p)(second p))

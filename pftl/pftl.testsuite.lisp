@@ -3,12 +3,9 @@
 ;; numbers are indexes to the paper example numbers
 ;; This is not part of CCGlab package 
 ;; load this file in CCGlab after you did (load-grammar "pftl") or 
-;; (load-model "pftl"), then run the relevant function defined below.
-
-(basic-ccg 'off)
 
 ;; set up a database of examples 
-(defparameter *pftl* '(
+(defparameter *db* '(
 (4 (sally sees harry))
 (14 (balb us mur um aedificat))
 (15 (sally sees harry))
@@ -74,19 +71,29 @@
 (s2 (gave without reading)) ;; the book I gave without reading and lent wout stamping to Harry
 ))
 
-(defun  pftl-ders()
+(defun  test-ders()
   (pprint (which-ccglab))
   (status)
+  (basic-ccg 'off)
+  (format t "~%basic ccg is off")
   (terpri)
-  (dolist (p *pftl*)(progn (ccg-deduce (second p))
+  (dolist (p *db*)(progn (ccg-deduce (second p))
+			   (format t "~%=======~%~s~%========~%" (first p))
+			   (cky-show-deduction)))
+  (pprint (which-ccglab))
+  (status)
+  (basic-ccg 'on)
+  (format t "~%basic ccg is on")
+  (terpri)
+  (dolist (p *db*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%========~%" (first p))
 			   (cky-show-deduction))))
 
-(defun  pftl-lfs()
+(defun  test-lfs()
   (pprint (which-ccglab))
   (status)
   (terpri)
-  (dolist (p *pftl*)
+  (dolist (p *db*)
     (progn (ccg-deduce (second p))
 	   (format t "~%=======~%~s~%========~%" (first p))
 	   (cky-show-lf-eqv))))

@@ -1,9 +1,9 @@
 ;; numbers are indexes to the paper example numbers
 ;; load this file in CCGlab after you do (load-grammar "fg2018") 
-;; then do (fg2018-ders) to see derivations of all examples,
-;;   and (fg2018-lfs) just to see LFs.
+;; then do (test-ders) to see derivations of all examples,
+;;   and (test-lfs) just to see LFs.
 ;; -cem bozsahin may 2018
-(defparameter *fg2018* '(
+(defparameter *db* '(
 (2 (John persuaded Mary to hit the target) s)
 (2a (John persuaded Mary hit the target) s)
 (2b(John persuaded Mary to hits the target) s)
@@ -27,15 +27,17 @@
 ))
 
 
-(defun  fg2018-ders()
+(defun  test-ders()
+  (status)
   (pprint (which-ccglab))
-  (dolist (p *fg2018*)(progn (ccg-deduce (second p))
+  (dolist (p *db*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%========~%" (first p))
 			   (cky-show-deduction (third p)))))
 
-(defun  fg2018-lfs()
+(defun  test-lfs()
+  (status)
   (pprint (which-ccglab))
-  (dolist (p *fg2018*)
+  (dolist (p *db*)
     (progn (ccg-deduce (second p))
 	   (format t "~%=======~%~s~%========~%" (first p))
 	   (cky-show-lf-eqv))))

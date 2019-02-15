@@ -15,10 +15,10 @@
 2'. (load-grammar "pftl")
 3. (load "pftl.testsuite.lisp")
 4. (dribble "output")
-5. (pftl-ders)
+5. (test-ders)
 6. (dribble)
 
 Step 5 does all the derivations, and saves them in the file 'output'.
 
 If you want you can check their LFs by
-7. (pftl-lfs)
+7. (test-lfs)

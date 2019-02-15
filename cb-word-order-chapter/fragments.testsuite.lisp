@@ -1,39 +1,10 @@
 ;; load this file in CCGlab after you did (load-grammar "fragments")
-;; then do (do-derivations) to see the derivations.
-;; (check-lfs) will verify the lambda reductions in case you are interested.
+;; then do (test-ders) to see the derivations.
+;; (test-lfs) will verify the lambda reductions in case you are interested.
 ;; example numbers are from the paper; see fragments.ccg header.
 ;;  Interpreting the results of commented out examples needs another paper.
 ;; -cem bozsahin, May 2018
-(defparameter *testdata* '(
-<<<<<<< HEAD
-  (4 (Can kediyi ve Ayşe köpeğe okşadı) s)
-  (4p (Can kediyi ve Ayşe köpeği okşadı) s)
-  (7 (Mary hits the target) s)
-  (fig1a (Mary persuades John to hit the target) s)
-  (fig1b (Mary promises John to hit the target) s)
-  (fig1c (Mary expects John to hit the target) s)
-  (21a (give Mary books and Klaus cds) nil)
-  (21b (Mary likes and John  hates cats) s)
-  (22 (Mary persuades John to hit the target) s)
-  (31a (dynes welodd gath) nil)
-  (31b (dynes welodd cath) nil)
-  (fig2a (arı sok -an kız) nil)
-  (fig2b ("arı sok" -an kız) nil)
-  (fig3 (kızı her arı soktu) s)
-  (37a (soktu arı kızı) s)
-  (37b (soktu kızı arı) s)
-  (fig4 (bütün arılar soktu kızı) s)
-  (43a (Eu não vi "os carros") s)
-  (43b (Eu não "os carros" vi) s)
-  (43c (Eu não os vi) s)
-  (43d (Eu os vi) s)
-  (43e (Eu não vi os) s)
-  (43e2 (Eu vi os) s)
-  (fig5a ("O Paulo" não os viu) s)
-  (fig5b (todos os viram) s)
-  (fig5c (Eu não vi "os carros") s)
-  (47 ("A sopa" "O Paulo" comeu) s)
-=======
+(defparameter *db* '(
   (4 (Can kediyi ve Ayşe köpeğe okşadı))
   (4p (Can kediyi ve Ayşe köpeği okşadı))
   (7 (Mary hits the target))
@@ -65,16 +36,19 @@
   (fig6b (todos os viram))
   (fig6c (Eu não vi "os carros"))
   (48 ("A sopa" "O Paulo" comeu))
->>>>>>> 61544315478f5f0799624bfd830d3dc61cea0077
   ))
 
-(defun  do-derivations ()
-  (dolist (p *testdata*)(progn (ccg-deduce (second p))
+(defun  test-ders ()
+  (status)
+  (pprint (which-ccglab))
+  (dolist (p *db*)(progn (ccg-deduce (second p))
 			   (format t "~%=======~%~s~%========~%" (first p))
 			   (cky-show-deduction (third p)))))
 
-(defun  check-lfs ()
-  (dolist (p *testdata*)
+(defun  test-lfs ()
+  (status)
+  (pprint (which-ccglab))
+  (dolist (p *db*)
     (progn (ccg-deduce (second p))
 	   (format t "~%=======~%~s~%========~%" (first p))
 	   (cky-show-lf-eqv))))
