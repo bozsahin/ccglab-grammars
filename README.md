@@ -1,6 +1,8 @@
 # ccglab-grammars
 sample grammars written in CCGlab, for linguistic analyses, modeling, training, etc.
 
+<b> This is a legacy repo. It is not maintained. The new location is ccglab-databases.</b>
+
 You need to install <a href="https://github.com/bozsahin/ccglab">ccglab</a> repo to computationally try the
 grammars included here.
 
